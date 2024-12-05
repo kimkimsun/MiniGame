@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1EE9E83C-A045-E1FE-74E5-021BD852819B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{11F79587-DB10-A8E5-706B-97BA98E1A1F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HueFolders.Editor", "HueFolders.Editor.csproj", "{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EE9E83C-A045-E1FE-74E5-021BD852819B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE9E83C-A045-E1FE-74E5-021BD852819B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE9E83C-A045-E1FE-74E5-021BD852819B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE9E83C-A045-E1FE-74E5-021BD852819B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F79587-DB10-A8E5-706B-97BA98E1A1F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F79587-DB10-A8E5-706B-97BA98E1A1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F79587-DB10-A8E5-706B-97BA98E1A1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F79587-DB10-A8E5-706B-97BA98E1A1F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
