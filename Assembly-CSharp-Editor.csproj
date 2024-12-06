@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{11F79587-DB10-A8E5-706B-97BA98E1A1F9}</ProjectGuid>
+    <ProjectGuid>{0923E84A-75BA-26D7-12E0-16309E80B4B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -540,6 +540,10 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.27f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.27f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
@@ -1337,11 +1341,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{1EE9E83C-A045-E1FE-74E5-021BD852819B}</Project>
+      <Project>{8DB67634-2D1E-7A43-CB8C-690198637FAF}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="HueFolders.Editor.csproj">
-      <Project>{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}</Project>
+      <Project>{91126C8F-98B1-0EFA-BEB5-DBF50BC3558C}</Project>
       <Name>HueFolders.Editor</Name>
     </ProjectReference>
   </ItemGroup>

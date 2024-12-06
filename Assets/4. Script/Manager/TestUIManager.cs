@@ -19,17 +19,17 @@ public class TestUIManager : MonoBehaviour
     public RowArray[] rightArray;
 
     private int index;
-    private int up;
-    private int down;
-    private int left;
-    private int right;
+    //private int up;
+    //private int down;
+    //private int left;
+    //private int right;
 
     private void Start()
     {
-        up = 0;
-        down = 1;
-        left = 2;
-        right = 3;
+        //up = 0;
+        //down = 1;
+        //left = 2;
+        //right = 3;
     }
     void Update()
     {

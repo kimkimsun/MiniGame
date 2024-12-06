@@ -482,6 +482,7 @@
 "Assets/4. Script/Framework/LTSeq.cs"
 "Assets/4. Script/Game/Enemy/Enemy.cs"
 "Assets/4. Script/Game/Enemy/EnemyState.cs"
+"Assets/4. Script/Game/Enemy/MiniEnemy.cs"
 "Assets/4. Script/Game/Player/BasicRigidBodyPush.cs"
 "Assets/4. Script/Game/Player/PlayerAim.cs"
 "Assets/4. Script/Game/Player/StarterAssetsInputs.cs"

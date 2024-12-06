@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1EE9E83C-A045-E1FE-74E5-021BD852819B}</ProjectGuid>
+    <ProjectGuid>{8DB67634-2D1E-7A43-CB8C-690198637FAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -95,10 +95,11 @@
     <Compile Include="Assets\0. etc\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\4. Script\Framework\LTDescr.cs" />
     <Compile Include="Assets\4. Script\Game\Player\PlayerAim.cs" />
-    <Compile Include="Assets\0. etc\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\0. etc\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\0. etc\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\3. Asset\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\0. etc\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\4. Script\Game\Enemy\MiniEnemy.cs" />
     <Compile Include="Assets\4. Script\Framework\LeanTweenExt.cs" />
     <Compile Include="Assets\0. etc\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\4. Script\Test\TestHitable.cs" />
@@ -1358,7 +1359,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="HueFolders.Editor.csproj">
-      <Project>{1AA7E2AA-F4CC-B600-37CD-A3D1C895B3E9}</Project>
+      <Project>{91126C8F-98B1-0EFA-BEB5-DBF50BC3558C}</Project>
       <Name>HueFolders.Editor</Name>
     </ProjectReference>
   </ItemGroup>
