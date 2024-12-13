@@ -39,6 +39,7 @@ public class StateMachine<T> : IStateMachine where T : class
     {
         if (stateDic.ContainsKey(name))
         {
+            if (curState == stateDic[name]) return;
             if (curState != null)
                 curState.Exit();
 

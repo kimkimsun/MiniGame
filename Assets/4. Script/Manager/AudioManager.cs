@@ -31,7 +31,7 @@ public class AudioManager : SingleTon<AudioManager>
             AudioSource source = audioSourcePools[soundKey].Dequeue();
             source.transform.position = position;
             source.gameObject.SetActive(true);
-            source.gameObject.layer = 1<<6;
+            source.gameObject.layer = 6;
             source.Play();
             StartCoroutine(ReturnToPool(soundKey, source, source.clip.length));
         }

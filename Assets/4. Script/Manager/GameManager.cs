@@ -5,10 +5,7 @@ using UnityEngine;
 public class GameManager : SingleTon<GameManager>
 {
     public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
-
-    private void Start()
-    {
-    }
+    public Player player;
     public void CreatePool(GameObject prefab, int count)
     {
         string key = prefab.name;

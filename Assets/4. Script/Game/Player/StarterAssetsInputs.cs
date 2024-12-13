@@ -15,6 +15,9 @@ namespace StarterAssets
         public bool aim;
         public bool shoot;
         public bool reload;
+        public bool hide;
+        public bool crouch;
+        public bool hideRegulate;
 
         [Header("Movement Settings")]
         public bool analogMovement;
@@ -23,44 +26,66 @@ namespace StarterAssets
         public bool cursorLocked = true;
         public bool cursorInputForLook = true;
 
+        private void Start()
+        {
+            hideRegulate = true;
+        }
+
 #if ENABLE_INPUT_SYSTEM
+        public bool IsDefaultState()
+        {
+            return move == Vector2.zero &&
+                   !aim &&
+                   !crouch;
+        }
         public void OnMove(InputValue value)
         {
-            MoveInput(value.Get<Vector2>());
+            if (cursorInputForLook) MoveInput(value.Get<Vector2>());
         }
 
         public void OnLook(InputValue value)
         {
-            if (cursorInputForLook)
-            {
-                LookInput(value.Get<Vector2>());
-            }
+            if (cursorInputForLook) LookInput(value.Get<Vector2>());
         }
 
         public void OnJump(InputValue value)
         {
-            JumpInput(value.isPressed);
+            if (cursorInputForLook) JumpInput(value.isPressed);
         }
 
         public void OnSprint(InputValue value)
         {
-            SprintInput(value.isPressed);
+            if (cursorInputForLook) SprintInput(value.isPressed);
         }
+
         public void OnAim(InputValue value)
         {
-            AimInput(value.isPressed);
+            if (cursorInputForLook) AimInput(value.isPressed);
         }
+
         public void OnShoot(InputValue value)
         {
             ShootInput(value.isPressed);
         }
+
         public void OnReload(InputValue value)
         {
             ReloadInput(value.isPressed);
         }
+
+        public void OnHide(InputValue value)
+        {
+            if (hideRegulate) 
+            {
+                HideInput(value.isPressed);
+            }
+        }
+
+        public void OnCrouch(InputValue value)
+        {
+            if (cursorInputForLook) CrouchInput(value.isPressed);
+        }
 #endif
-
-
         public void MoveInput(Vector2 newMoveDirection)
         {
             move = newMoveDirection;
@@ -90,6 +115,14 @@ namespace StarterAssets
         public void ReloadInput(bool newReloadState)
         {
             reload = newReloadState;
+        }
+        public void HideInput(bool newHideState)
+        {
+            hide = newHideState;
+        }
+        public void CrouchInput(bool newHideState)
+        {
+            crouch = !crouch;
         }
 
         private void OnApplicationFocus(bool hasFocus)

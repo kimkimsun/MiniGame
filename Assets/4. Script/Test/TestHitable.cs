@@ -2,26 +2,18 @@ using UnityEngine;
 using InterfaceManager;
 public class TestHitable : MonoBehaviour, IHitable
 {
-    int hp = 100;
+    float hp = 100;
 
-    public int Hp
+    public float Hp
     {
-        get => hp; 
+        get => hp;
         set
         {
             hp = value;
-            if(hp < 0)
+            if (hp < 0)
             {
                 Debug.Log("À¸¾Ç");
             }
-        }
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.C))
-        {
-            Debug.Log(hp);
         }
     }
 }

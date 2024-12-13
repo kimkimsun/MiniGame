@@ -1,10 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace InterfaceManager
 {
+    public enum Hide_Type
+    {
+        Horizontal,
+        Vertical,
+    }
     public interface IHitable
     {
-        public int Hp
+        public float Hp
         {  get; set; }
     }
     public interface IAttackable
@@ -26,6 +32,20 @@ namespace InterfaceManager
     {
         public void SetState(string name);
         public object GetOwner();
+    }
+    public interface IInteractive
+    {
+        public Transform CameraTrans
+        { get; set; }
+        public Transform FixTrans 
+        {  get; set; }
+        public Sprite KeyCodeEImg
+            { get; set; }
+        public string InteractiveText
+        { get; set; }
+        public Hide_Type HideType 
+        { get; set; }
+        public void Interactive();
     }
 }
 
