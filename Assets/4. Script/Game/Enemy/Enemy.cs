@@ -1,3 +1,4 @@
+using InterfaceManager;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -69,11 +70,12 @@ public class MiniEnemyStrategy : EnemyStrategy
         while (true)
         {
             yield return new WaitForSeconds(fireRate);
+            Vector3 bulletDirection = (owner.PlayerTrans.position - owner.BulletHole.transform.position).normalized;
             bullet = gmInstance.GetFromPool(owner.Bullet);
-            bullet.transform.position = owner.BulletHole.transform.position;
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             rb.angularVelocity = Vector3.zero; // 초기화(필요하다면)
-            rb.AddForce((owner.PlayerTrans.position - owner.BulletHole.transform.position).normalized * speed, ForceMode.Impulse);
+            bullet.transform.position = owner.BulletHole.transform.position;
+            rb.AddForce(bulletDirection * speed, ForceMode.Impulse);
         }
     }
 }
@@ -86,7 +88,7 @@ public enum ENEMY_TYPE
 }
 
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHitable
 {
     #region 변수
     [Header("Serializefield")]
@@ -114,9 +116,11 @@ public class Enemy : MonoBehaviour
     private float               soundDetectionRange;
     private float               lookDetectionRange;
     private float               maxDistance;
+    private float               hp;
     private int                 spineRunAnimId;
     private int                 spineDieAnimId;
     private int                 weaponAnimId;
+    private int                 idleAnimId;
     private bool                isHearable;
     private bool                isPlayerCheck;
     private bool                isAttack;
@@ -126,6 +130,11 @@ public class Enemy : MonoBehaviour
 
     #region 프로퍼티
 
+    public Transform HeadTreans
+    {
+        get => headTrans;
+        set => headTrans = value;
+    }
     public Transform PlayerTrans
     {
         get => playerTrans;
@@ -145,6 +154,11 @@ public class Enemy : MonoBehaviour
     {
         get => weaponAnimator;
         set => weaponAnimator = value;
+    }
+    public int IdleAnimId
+    {
+        get => idleAnimId;
+        set => idleAnimId = value;
     }
     public int SpineRunAnimId
     {
@@ -222,6 +236,19 @@ public class Enemy : MonoBehaviour
         get => lookDetectionRange;
         set => lookDetectionRange = value;
     }
+    public float Hp 
+    {
+        get => hp;
+        set
+        {
+            hp = value;
+            if(hp <= 0)
+            {
+                spineAnimator.SetBool(SpineDieAnimId, true);
+                //여기에 URP그래프 하면 될 듯
+            }
+        }
+    }
     #endregion
     protected virtual void Start()
     {
@@ -232,10 +259,12 @@ public class Enemy : MonoBehaviour
         sm = new StateMachine<Enemy>();
         sm.owner = this;
         maxDistance = 15f;
+        hp = 100;
         //정의
         spineRunAnimId = Animator.StringToHash("Run");
         spineDieAnimId = Animator.StringToHash("Die");
         weaponAnimId = Animator.StringToHash("EnemyFire");
+        idleAnimId = Animator.StringToHash("Idle");
 
         sm.AddState("Wander", new EnemyWanderState());
         sm.AddState("Attack", new EnemyAttackState());
@@ -266,7 +295,6 @@ public class Enemy : MonoBehaviour
         soundCol = Physics.OverlapSphere(transform.position, soundDetectionRange, heardTargetLayerMask);
         lookCol = Physics.OverlapSphere(transform.position, lookDetectionRange, lookTargetLayerMask);
         HandleStateChange();
-        if(Input.GetKeyDown(KeyCode.Z)) Debug.Log(sm.curState);
     }
     void HandleStateChange()
     {
@@ -275,7 +303,7 @@ public class Enemy : MonoBehaviour
             RaycastHit hit;
             direction = ((lookCol[0].transform.position) - transform.position).normalized; // 그래서 내 방향을 설정한다
             Debug.DrawLine(headTrans.position, headTrans.position + (direction * maxDistance), Color.red);
-            if (Physics.Raycast(headTrans.position, direction * maxDistance, out hit, maxDistance)) // 그 방향대로 들어온놈이랑 선을 이어본다
+            if (Physics.Raycast(headTrans.position, direction, out hit, maxDistance)) // 그 방향대로 들어온놈이랑 선을 이어본다
             {
                 if (CheckInLayerMask(hit.collider.gameObject.layer)) // 이었더니 그 놈이 내가 찾는 놈이고 장애물이 없다
                 {

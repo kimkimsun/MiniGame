@@ -1,11 +1,15 @@
 using InterfaceManager;
+using StarterAssets;
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class PlayerState : State
 {
     public Player owner;
+    protected float walkSpeed;
+    protected float sprintSpeed;
     public override void Init(IStateMachine sm)
     {
         this.sm = sm;
@@ -18,9 +22,13 @@ public class PlayerState : State
 
 public class PlayerIdleState : PlayerState
 {
-    public override void Enter() 
+    public override void Enter()
     {
-        Debug.Log("Idle");
+        walkSpeed = 2.0f;
+        sprintSpeed = 5.335f;
+        owner._ThirdPersonController.targetSpeed = owner.Input.sprint ? sprintSpeed : walkSpeed;
+        // 함수로 묶어야겠지
+        // 사운드 호출하고
     }
     public override void Exit() { }
     public override void Update() { }
@@ -29,7 +37,9 @@ public class PlayerPainState : PlayerState
 {
     public override void Enter() 
     {
-        Debug.Log("Pain");
+        walkSpeed = 1.5f;
+        sprintSpeed = 4.000f;
+        owner._ThirdPersonController.targetSpeed = owner.Input.sprint ? sprintSpeed : walkSpeed;
     }
     public override void Exit() { }
     public override void Update() { }
@@ -38,7 +48,9 @@ public class PlayerExhaustionState : PlayerState
 {
     public override void Enter() 
     {
-        Debug.Log("Exhaustion");
+        walkSpeed = 1.2f;
+        sprintSpeed = 3.035f;
+        owner._ThirdPersonController.targetSpeed = owner.Input.sprint ? sprintSpeed : walkSpeed;
     }
     public override void Exit() { }
     public override void Update() { }
@@ -47,7 +59,8 @@ public class PlayerDyingState : PlayerState
 {
     public override void Enter() 
     {
-        Debug.Log("Dying");
+        walkSpeed = 1.0f;
+        owner._ThirdPersonController.targetSpeed = walkSpeed;
     }
     public override void Exit() { }
     public override void Update() { }

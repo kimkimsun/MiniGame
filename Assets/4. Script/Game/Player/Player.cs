@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using InterfaceManager;
 using StarterAssets;
@@ -9,6 +8,7 @@ public class Player : MonoBehaviour, IHitable
     #region º¯¼ö
 
     private IEnumerator                         wornOutCoroutine; 
+    private ThirdPersonController               thirdPersonController;
     private StarterAssetsInputs                 input;
     private StateMachine<Player>                sm;
     private Animator                            anim;
@@ -63,16 +63,23 @@ public class Player : MonoBehaviour, IHitable
         get => input;
         set => input = value;
     }
+    public ThirdPersonController _ThirdPersonController
+    {
+        get => thirdPersonController; 
+        set => thirdPersonController = value;
+    }
+
     #endregion
     private void Start()
     {
-        hp =                4;
-        wornOutCoroutine =  WornOutCo();
-        input =             GetComponent<StarterAssetsInputs>();
-        anim =              GetComponent<Animator>();
-        sm =                new StateMachine<Player>();
-        sm.owner =          this;
-        isRunning =         true;
+        hp =                        4;
+        wornOutCoroutine =          WornOutCo();
+        input =                     GetComponent<StarterAssetsInputs>();
+        thirdPersonController =     GetComponent<ThirdPersonController>();
+        anim =                      GetComponent<Animator>();
+        sm =                        new StateMachine<Player>();
+        sm.owner =                  this;
+        isRunning =                 true;
 
 
         sm.AddState("Idle", new PlayerIdleState());

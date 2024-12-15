@@ -14,6 +14,7 @@ namespace StarterAssets
         [Header("Player")]
         public float MoveSpeed = 2.0f;
         public float SprintSpeed = 5.335f;
+        public float targetSpeed;
         [Range(0.0f, 0.3f)]
         public float RotationSmoothTime = 0.12f;
         public float SpeedChangeRate = 10.0f;
@@ -80,8 +81,12 @@ namespace StarterAssets
 #endif
         private Animator _animator;
         private CharacterController _controller;
+        private CapsuleCollider _collider;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        private Vector3 idleVec;
+        private Vector3 crouchVec;
+        private Vector3 crouchMoveVec;
 
         private const float _threshold = 0.01f;
 
@@ -115,6 +120,7 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
+            _collider = GetComponent<CapsuleCollider>();
 #if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
 #else
@@ -124,6 +130,10 @@ namespace StarterAssets
 
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            idleVec = new Vector3(0, 0.9f, 0);
+            crouchVec = new Vector3(0, 0.54f, 0);
+            crouchMoveVec = new Vector3(0, 0.72f, 0);
         }
 
         private void Update()
@@ -203,11 +213,29 @@ namespace StarterAssets
 
         private void Move()
         {
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            _controller.center = idleVec;
+            _controller.height = 1.8f;
+            _collider.center = idleVec;
+            _collider.height = 1.8f;
             if (_input.crouch)
             {
                 _animator.SetBool(_animIDCrouch, true);
                 targetSpeed = 2;
+                if(_input.move == Vector2.zero)
+                {
+                    _controller.center = crouchVec;
+                    _controller.height = 1.08f;
+                    _collider.center = crouchVec;
+                    _collider.height = 1.08f;
+                }
+                else
+                {
+                    _controller.center = crouchMoveVec;
+                    _controller.height = 1.44f;
+                    _collider.center = crouchMoveVec;
+                    _collider.height = 1.44f;
+                }
             }
             else
             {

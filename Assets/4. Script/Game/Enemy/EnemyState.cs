@@ -50,12 +50,13 @@ public class EnemyChaseState : EnemyState // 추격 State
 {
     public override void Enter()
     {
-        // 초기세팅? 뭘 해야될까 모르겠네 흠냐링
         Debug.Log("chase 들어옴");
+        owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
     }
 
     public override void Exit()
     {
+        owner.SpineAnimator.SetBool(owner.SpineRunAnimId, false);
     }
 
     public override void Update()
@@ -80,6 +81,7 @@ public class EnemyAttackState : EnemyState // 공격 State
         Debug.LogWarning("어택에 들어오는건가");
         owner.Agent.isStopped = true;
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, true);
+        owner.SpineAnimator.SetBool(owner.IdleAnimId, true);
         owner.Attack();
     }
 
@@ -92,12 +94,24 @@ public class EnemyAttackState : EnemyState // 공격 State
             owner.AttackCoroutine = null; // 레퍼런스 초기화
         }
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, false);
+        owner.SpineAnimator.SetBool(owner.IdleAnimId, false);
     }
     public override void Update() 
     {
         Vector3 direction = (owner.PlayerTrans.position - owner.transform.position).normalized;
+        direction.y = 0; // y축을 고정하여 위아래를 무시하고 좌우만 회전하도록 설정
+
+        // 좌우 회전 처리 (몸체)
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, lookRotation, Time.deltaTime * 50);
+
+        // 위아래 회전을 위한 방향 계산
+        Vector3 headDirection = (owner.PlayerTrans.position - owner.HeadTreans.position).normalized;
+        float pitch = -Mathf.Asin(headDirection.y) * Mathf.Rad2Deg;  // 위아래 각도 계산
+
+        // 위아래 회전 처리 (머리)
+        Quaternion headRotation = Quaternion.Euler(pitch, owner.HeadTreans.localEulerAngles.y, owner.HeadTreans.localEulerAngles.z);
+        owner.HeadTreans.localRotation = Quaternion.Slerp(owner.HeadTreans.localRotation, headRotation, Time.deltaTime * 50);
     }
 }
 public class EnemyKeepAttackState : EnemyState // 공격 State
@@ -110,12 +124,14 @@ public class EnemyKeepAttackState : EnemyState // 공격 State
         owner.Attack();
         owner.Agent.SetDestination(player.transform.position);
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, true);
+        owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
     }
 
     public override void Exit()
     {
         owner.IsKeep = true;
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, false);
+        owner.SpineAnimator.SetBool(owner.SpineRunAnimId, false);
         if (owner.AttackCoroutine != null)
         {
             owner.StopCoroutine(owner.AttackCoroutine); // 실행 중인 코루틴 중단

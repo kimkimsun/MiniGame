@@ -903,7 +903,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e6f3968b6cc3144f8cb1b7f076ac99a, type: 2}
+  - {fileID: 2100000, guid: 874ced19606fbf84ea40ab9130e880f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1265,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 357.02414
+      value: 350.55453
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1273,7 +1273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -804.1905
+      value: -803.98425
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4157,7 +4157,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5696225479331483114}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2.16
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -4166,7 +4166,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 4.63
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -4195,7 +4195,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6708796204862145825}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b3082ef98fddd2046ac5a8dae1980218, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 6a69bec3f23dcb2419d254f245cbe8b0, type: 3}
   m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -6453,6 +6453,7 @@ GameObject:
   - component: {fileID: 8650609794964159100}
   - component: {fileID: 2106458896}
   - component: {fileID: 2106458894}
+  - component: {fileID: 8650609794964159101}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -6677,7 +6678,7 @@ Transform:
   m_GameObject: {fileID: 6708796204862145825}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 356.48212, y: 216.6783, z: -800.1905}
+  m_LocalPosition: {x: 350.0125, y: 216.6783, z: -799.98425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6839,6 +6840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 2
   SprintSpeed: 6
+  targetSpeed: 0
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 9208714179031086307, guid: 21fcbcf67992e1b4eab160059fc03c57, type: 3}
@@ -7191,7 +7193,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 8341161198671653776, guid: b3082ef98fddd2046ac5a8dae1980218, type: 3}
+  m_Mesh: {fileID: 8341161198671653776, guid: 6a69bec3f23dcb2419d254f245cbe8b0, type: 3}
   m_Bones:
   - {fileID: 1874039481203572495}
   - {fileID: 2191305979893140636}
@@ -7994,6 +7996,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &8650609794964159101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696225479331483114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.98, y: 5.09, z: 1}
+  m_Center: {x: 0, y: 2.58, z: 0}
 --- !u!1 &8692316119221351081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8224,7 +8247,7 @@ Transform:
   m_GameObject: {fileID: 8944336656770096088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 357.02414, y: 218.3263, z: -804.1905}
+  m_LocalPosition: {x: 350.55453, y: 218.3263, z: -803.98425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
