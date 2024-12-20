@@ -1,7 +1,7 @@
 using UnityEngine;
 using InterfaceManager;
 using UnityEngine.UI;
-public class InteractiveObj : MonoBehaviour, IInteractive
+public class InteractiveObj : MonoBehaviour, IHideable
 {
     [SerializeField] private Transform cameraTrans;
     [SerializeField] private Transform fixTrans;
@@ -32,10 +32,5 @@ public class InteractiveObj : MonoBehaviour, IInteractive
     {
         get => hideType;
         set => hideType = value;
-    }
-
-    public void Interactive()
-    {
-
     }
 }

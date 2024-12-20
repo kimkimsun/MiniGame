@@ -33,7 +33,7 @@ namespace InterfaceManager
         public void SetState(string name);
         public object GetOwner();
     }
-    public interface IInteractive
+    public interface IHideable
     {
         public Transform CameraTrans
         { get; set; }
@@ -45,6 +45,9 @@ namespace InterfaceManager
         { get; set; }
         public Hide_Type HideType 
         { get; set; }
+    }
+    public interface IInteractive
+    {
         public void Interactive();
     }
 }

@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: a66563de017aa654487b8b7326d0faf9
+guid: d6b5b72f1c4bb3f41b1d350da500de1a
 DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Scenes/Demo.unity
+  uploadId: 716084

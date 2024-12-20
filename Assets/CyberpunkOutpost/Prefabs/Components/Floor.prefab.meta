@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b7a4cc3596fc40144a7d40f889e4e2ad
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Floor.prefab
+  uploadId: 716084

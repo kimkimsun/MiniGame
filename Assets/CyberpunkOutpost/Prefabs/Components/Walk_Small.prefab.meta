@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ac7d50d9dad28ea45818739da92107ba
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Walk_Small.prefab
+  uploadId: 716084

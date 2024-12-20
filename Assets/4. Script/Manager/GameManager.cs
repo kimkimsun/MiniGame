@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : SingleTon<GameManager>
 {
@@ -51,6 +52,13 @@ public class GameManager : SingleTon<GameManager>
         else
         {
             Destroy(obj); // 풀을 생성 안하고 사용했을 때에 대비한 예외처리
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }

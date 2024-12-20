@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 617d27d2bca16ec489838d3e0077f84f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Device_01.prefab
+  uploadId: 716084

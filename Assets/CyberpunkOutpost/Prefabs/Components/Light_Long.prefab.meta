@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d8a9bfddac3463941b8cb37f9ddea974
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Light_Long.prefab
+  uploadId: 716084

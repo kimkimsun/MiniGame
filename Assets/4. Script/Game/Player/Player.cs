@@ -2,6 +2,7 @@ using UnityEngine;
 using InterfaceManager;
 using StarterAssets;
 using System.Collections;
+using UnityEditor.Animations;
 
 public class Player : MonoBehaviour, IHitable
 {

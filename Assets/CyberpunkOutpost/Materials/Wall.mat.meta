@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf0340e1278ee82428a0fe6dd6c38055
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Materials/Wall.mat
+  uploadId: 716084

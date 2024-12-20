@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: db1c7bc4f6100dc4cb5c082423625220
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Latch_01.prefab
+  uploadId: 716084

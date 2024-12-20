@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\github\\minigame\\assets\\4. script\\game\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\enemy\\enemystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\enemy\\enemystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\iinteractiveobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\iinteractiveobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\cutscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\cutscenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\trainingenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\trainingenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\github\\minigame\\assets\\4. script\\test\\testenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\test\\testenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\arrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\arrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\player\\playeraim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,55 +43,75 @@
       "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\player\\starterassetsinputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\interfacemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\interfacemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\enemy\\enemystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\enemy\\enemystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\github\\minigame\\assets\\4. script\\game\\enemy\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\enemy\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\github\\minigame\\assets\\4. script\\game\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\testuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\testuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\slimui\\modern menu 1\\scripts\\misc\\resetdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\slimui\\modern menu 1\\scripts\\misc\\resetdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\player\\thirdpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\player\\thirdpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\test\\testhitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\test\\testhitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\player\\playerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\player\\playerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\interfacemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\interfacemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\interactiveobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\interactiveobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\test\\testhitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\test\\testhitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pc\\Documents\\GitHub\\Final-Project\\Assets\\Scripts\\Player\\InteractionAim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\manager\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\manager\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\player\\playerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\player\\playerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\test\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\test\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\arrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\arrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\TestUIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\4. Script\\Manager\\TestUIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\enemy\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\enemy\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\game\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\game\\statemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\triggerentercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\triggerentercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\assets\\4. script\\etc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DB67634-2D1E-7A43-CB8C-690198637FAF}|Assembly-CSharp.csproj|solutionrelative:assets\\4. script\\etc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\EventSystem\\InputModules\\BaseInput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\EventSystem\\InputModules\\BaseInput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\TrainingEnemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\TrainingEnemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,30 +121,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ThirdPersonController.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\ThirdPersonController.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Player\\ThirdPersonController.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\ThirdPersonController.cs",
               "RelativeToolTip": "Assets\\4. Script\\Game\\Player\\ThirdPersonController.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAewMUAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAL0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T07:26:05.905Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "StarterAssetsInputs.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\StarterAssetsInputs.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Player\\StarterAssetsInputs.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\StarterAssetsInputs.cs",
               "RelativeToolTip": "Assets\\4. Script\\Game\\Player\\StarterAssetsInputs.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwEgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAIA5wBoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T01:31:24.989Z",
               "IsPinned": true,
@@ -112,27 +153,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerAim.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
-              "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
-              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
-              "RelativeToolTip": "Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAMwDoBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T02:19:38.22Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Player\\Player.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\Player.cs",
               "RelativeToolTip": "Assets\\4. Script\\Game\\Player\\Player.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwAYAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwGwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T08:50:08.136Z",
               "IsPinned": true,
@@ -140,13 +167,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
+              "Title": "PlayerAim.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
+              "RelativeToolTip": "Assets\\4. Script\\Game\\Player\\PlayerAim.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAADwv9oAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T02:19:38.22Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UIManager.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\UIManager.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Manager\\UIManager.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\UIManager.cs",
               "RelativeToolTip": "Assets\\4. Script\\Manager\\UIManager.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T06:16:06.797Z",
               "IsPinned": true,
@@ -154,7 +195,135 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\Manager\\AudioManager.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\AudioManager.cs",
+              "RelativeToolTip": "Assets\\4. Script\\Manager\\AudioManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvxAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T07:54:41.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TestEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Test\\TestEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\Test\\TestEnemy.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Test\\TestEnemy.cs",
+              "RelativeToolTip": "Assets\\4. Script\\Test\\TestEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:08:08.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrainingEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\TrainingEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\TrainingEnemy.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\TrainingEnemy.cs",
+              "RelativeToolTip": "Assets\\4. Script\\TrainingEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T02:01:03.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CutSceneManager.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\CutSceneManager.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\CutSceneManager.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\CutSceneManager.cs",
+              "RelativeToolTip": "Assets\\4. Script\\CutSceneManager.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAIwHgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T08:45:29.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IInteractiveObj.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\IInteractiveObj.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\IInteractiveObj.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\IInteractiveObj.cs",
+              "RelativeToolTip": "Assets\\4. Script\\IInteractiveObj.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T06:51:01.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TriggerEnterCheck.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\TriggerEnterCheck.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\TriggerEnterCheck.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\TriggerEnterCheck.cs",
+              "RelativeToolTip": "Assets\\4. Script\\TriggerEnterCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T05:24:46.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "etc.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\etc.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\etc.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\etc.cs",
+              "RelativeToolTip": "Assets\\4. Script\\etc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T05:19:59.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "TrainingEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\TrainingEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\TrainingEnemy.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\TrainingEnemy.cs",
+              "RelativeToolTip": "Assets\\TrainingEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T08:47:38.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ResetDemo.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\SlimUI\\Modern Menu 1\\Scripts\\Misc\\ResetDemo.cs",
+              "RelativeDocumentMoniker": "Assets\\SlimUI\\Modern Menu 1\\Scripts\\Misc\\ResetDemo.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\SlimUI\\Modern Menu 1\\Scripts\\Misc\\ResetDemo.cs",
+              "RelativeToolTip": "Assets\\SlimUI\\Modern Menu 1\\Scripts\\Misc\\ResetDemo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T07:25:01.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BaseInput.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\EventSystem\\InputModules\\BaseInput.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\EventSystem\\InputModules\\BaseInput.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\EventSystem\\InputModules\\BaseInput.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\EventSystem\\InputModules\\BaseInput.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAIBZwBEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T09:55:10.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "ArrowUI.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\ArrowUI.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\ArrowUI.cs",
@@ -162,12 +331,11 @@
               "RelativeToolTip": "Assets\\4. Script\\ArrowUI.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAgwCYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T06:44:17.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T06:44:17.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Enemy\\Bullet.cs",
@@ -175,38 +343,50 @@
               "RelativeToolTip": "Assets\\4. Script\\Game\\Enemy\\Bullet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:10:44.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T03:10:44.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EnemyState.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
-              "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
-              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
-              "RelativeToolTip": "Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAywH0AAAABAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "Test.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Test\\Test.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\Test\\Test.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Test\\Test.cs",
+              "RelativeToolTip": "Assets\\4. Script\\Test\\Test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:15:27.973Z",
+              "WhenOpened": "2024-12-19T05:19:38.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Enemy\\Enemy.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\Enemy.cs",
               "RelativeToolTip": "Assets\\4. Script\\Game\\Enemy\\Enemy.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAIAwwE0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAF4BAAAAAAAAAIAwwHkBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T01:07:42.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
+              "Title": "EnemyState.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
+              "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
+              "RelativeToolTip": "Assets\\4. Script\\Game\\Enemy\\EnemyState.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwH4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T01:15:27.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "PlayerState.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\Player\\PlayerState.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\Player\\PlayerState.cs",
@@ -214,11 +394,12 @@
               "RelativeToolTip": "Assets\\4. Script\\Game\\Player\\PlayerState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T01:45:11.207Z"
+              "WhenOpened": "2024-12-10T01:45:11.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "InteractionAim.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Final-Project\\Assets\\Scripts\\Player\\InteractionAim.cs",
               "RelativeDocumentMoniker": "..\\Final-Project\\Assets\\Scripts\\Player\\InteractionAim.cs",
@@ -231,49 +412,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "TestHitable.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Test\\TestHitable.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Test\\TestHitable.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Test\\TestHitable.cs",
               "RelativeToolTip": "Assets\\4. Script\\Test\\TestHitable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T08:26:43.972Z"
+              "WhenOpened": "2024-12-09T08:26:43.972Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Manager\\GameManager.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\GameManager.cs",
               "RelativeToolTip": "Assets\\4. Script\\Manager\\GameManager.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA1wBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAYwDoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T06:02:53.759Z"
+              "WhenOpened": "2024-12-06T06:02:53.759Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AudioManager.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\AudioManager.cs",
-              "RelativeDocumentMoniker": "Assets\\4. Script\\Manager\\AudioManager.cs",
-              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\AudioManager.cs",
-              "RelativeToolTip": "Assets\\4. Script\\Manager\\AudioManager.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAhwBkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T07:54:41.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "InterfaceManager.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\InterfaceManager.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Manager\\InterfaceManager.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\InterfaceManager.cs",
               "RelativeToolTip": "Assets\\4. Script\\Manager\\InterfaceManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAIA2wDIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T08:44:25.004Z",
               "EditorCaption": ""
@@ -286,31 +457,31 @@
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\InteractiveObj.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\InteractiveObj.cs",
               "RelativeToolTip": "Assets\\4. Script\\Game\\InteractiveObj.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T09:15:23.398Z"
+              "WhenOpened": "2024-12-09T09:15:23.398Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "TestUIManager.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\TestUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Manager\\TestUIManager.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Manager\\TestUIManager.cs",
               "RelativeToolTip": "Assets\\4. Script\\Manager\\TestUIManager.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAjwBoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T02:19:08.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 23,
               "Title": "StateMachine.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\StateMachine.cs",
               "RelativeDocumentMoniker": "Assets\\4. Script\\Game\\StateMachine.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MiniGame\\Assets\\4. Script\\Game\\StateMachine.cs",
               "RelativeToolTip": "Assets\\4. Script\\Game\\StateMachine.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowCkAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T01:15:37.291Z"
             }

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bf6d32425a050aa48ae137370a503e31
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Antenna.prefab
+  uploadId: 716084

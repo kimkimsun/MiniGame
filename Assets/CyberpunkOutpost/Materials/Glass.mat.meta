@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a88cc12ee07a38f47af96c4e6ed31484
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Materials/Glass.mat
+  uploadId: 716084

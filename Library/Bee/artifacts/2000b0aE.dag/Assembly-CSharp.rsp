@@ -107,6 +107,7 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/6000.0.27f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
@@ -372,6 +373,8 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.PackageValidationSuite.Editor.Extension.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.PackageValidationSuite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2000b0aE.dag/Unity.Postprocessing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2000b0aE.dag/Unity.Postprocessing.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.Rendering.LightTransport.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.Rendering.LightTransport.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.RenderPipeline.Universal.ShaderLibrary.ref.dll"
@@ -445,12 +448,14 @@
 "Assets/0. etc/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/0. etc/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/0. etc/TutorialInfo/Scripts/Readme.cs"
-"Assets/3. Asset/StarterAssets/Mobile/Scripts/CanvasInputs/UICanvasControllerInput.cs"
-"Assets/3. Asset/StarterAssets/Mobile/Scripts/Utilities/MobileDisableAutoSwitchControls.cs"
-"Assets/3. Asset/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualButton.cs"
-"Assets/3. Asset/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualJoystick.cs"
-"Assets/3. Asset/StarterAssets/Mobile/Scripts/VirtualInputs/UIVirtualTouchZone.cs"
+"Assets/3. Asset/Mobile/Scripts/CanvasInputs/UICanvasControllerInput.cs"
+"Assets/3. Asset/Mobile/Scripts/Utilities/MobileDisableAutoSwitchControls.cs"
+"Assets/3. Asset/Mobile/Scripts/VirtualInputs/UIVirtualButton.cs"
+"Assets/3. Asset/Mobile/Scripts/VirtualInputs/UIVirtualJoystick.cs"
+"Assets/3. Asset/Mobile/Scripts/VirtualInputs/UIVirtualTouchZone.cs"
 "Assets/4. Script/ArrowUI.cs"
+"Assets/4. Script/CutSceneManager.cs"
+"Assets/4. Script/etc.cs"
 "Assets/4. Script/Framework/LeanAudio.cs"
 "Assets/4. Script/Framework/LeanSmooth.cs"
 "Assets/4. Script/Framework/LeanTest.cs"
@@ -470,16 +475,28 @@
 "Assets/4. Script/Game/Player/StarterAssetsInputs.cs"
 "Assets/4. Script/Game/Player/ThirdPersonController.cs"
 "Assets/4. Script/Game/StateMachine.cs"
+"Assets/4. Script/IInteractiveObj.cs"
 "Assets/4. Script/Manager/AudioManager.cs"
 "Assets/4. Script/Manager/GameManager.cs"
 "Assets/4. Script/Manager/InterfaceManager.cs"
 "Assets/4. Script/Manager/SingleTon.cs"
-"Assets/4. Script/Manager/TestUIManager.cs"
 "Assets/4. Script/Manager/UIManager.cs"
 "Assets/4. Script/Test/Test.cs"
+"Assets/4. Script/Test/TestEnemy.cs"
 "Assets/4. Script/Test/TestHitable.cs"
+"Assets/4. Script/TrainingEnemy.cs"
+"Assets/4. Script/TriggerEnterCheck.cs"
 "Assets/4. Script/WebSocket/WebSocketHandler.cs"
 "Assets/Sci-Fi UI/Demo_Assets/scripts/GUI_Demo.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/Audio/CheckMusicVolume.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/Audio/CheckSFXVolume.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/Managers/UIMenuManager.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/Managers/UISettingsManager.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/Misc/ExtraLinks.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/Misc/ResetDemo.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/ThemeEditor/ThemedUI.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/ThemeEditor/ThemedUIData.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/ThemeEditor/ThemedUIElement.cs"
 -langversion:9.0
 /deterministic
 /optimize+

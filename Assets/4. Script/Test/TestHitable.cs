@@ -2,7 +2,7 @@ using UnityEngine;
 using InterfaceManager;
 public class TestHitable : MonoBehaviour, IHitable
 {
-    float hp = 100;
+    float hp = 10;
 
     public float Hp
     {
@@ -10,7 +10,7 @@ public class TestHitable : MonoBehaviour, IHitable
         set
         {
             hp = value;
-            if (hp < 0)
+            if (hp <= 0)
             {
                 Debug.Log("À¸¾Ç");
             }

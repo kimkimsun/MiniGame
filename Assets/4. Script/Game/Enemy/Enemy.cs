@@ -10,6 +10,7 @@ public abstract class EnemyStrategy
     protected Enemy owner;
     public abstract void Init();
     public abstract void Attack();
+    public abstract void Hit();
 }
 public class BossEnemyStrategy : EnemyStrategy
 {
@@ -25,6 +26,10 @@ public class BossEnemyStrategy : EnemyStrategy
     {
 
     }
+
+    public override void Hit()
+    {
+    }
 }
 public class HorrorEnemyStrategy : EnemyStrategy
 {
@@ -39,6 +44,10 @@ public class HorrorEnemyStrategy : EnemyStrategy
     public override void Attack()
     {
 
+    }
+
+    public override void Hit()
+    {
     }
 }
 public class MiniEnemyStrategy : EnemyStrategy
@@ -78,6 +87,18 @@ public class MiniEnemyStrategy : EnemyStrategy
             rb.AddForce(bulletDirection * speed, ForceMode.Impulse);
         }
     }
+
+    public override void Hit()
+    {
+        if (owner.HitCoroutine == null)
+        {
+            owner.HitCoroutine = owner.StartCoroutine(owner.HitCo());
+        }
+        else
+        {
+            owner._Time = 0;
+        }
+    }
 }
 
 public enum ENEMY_TYPE
@@ -95,6 +116,7 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] private ENEMY_TYPE     type;
     [SerializeField] private Transform[]    nextPos;
     [SerializeField] private Transform      headTrans;
+    [SerializeField] private Light          headLight;
     [SerializeField] private GameObject     bullet;
     [SerializeField] private GameObject     bulletHole;
     [SerializeField] private Animator       spineAnimator;
@@ -104,6 +126,8 @@ public class Enemy : MonoBehaviour, IHitable
     private StateMachine<Enemy> sm;
     private Collider[]          soundCol;
     private Collider[]          lookCol;
+    private Coroutine           hitCoroutine;
+    private Coroutine           attackCoroutine;
     private Transform           soundTrans;
     private Transform           playerTrans;
     private NavMeshAgent        agent;
@@ -111,12 +135,13 @@ public class Enemy : MonoBehaviour, IHitable
     private LayerMask           heardTargetLayerMask;
     private LayerMask           lookTargetLayerMask;
     private Vector3             direction;
-    private Coroutine           attackCoroutine;
+    private Vector3             originHeadLightTrans;
     private IEnumerator         attackKeepCoroutine;
     private float               soundDetectionRange;
     private float               lookDetectionRange;
     private float               maxDistance;
     private float               hp;
+    private float               time;
     private int                 spineRunAnimId;
     private int                 spineDieAnimId;
     private int                 weaponAnimId;
@@ -130,6 +155,16 @@ public class Enemy : MonoBehaviour, IHitable
 
     #region 프로퍼티
 
+    public float _Time
+    {
+        get => time;
+        set => time = value;
+    }
+    public Light HeadLight
+    {
+        get => headLight;
+        set => headLight = value;
+    }
     public Transform HeadTreans
     {
         get => headTrans;
@@ -190,6 +225,11 @@ public class Enemy : MonoBehaviour, IHitable
         get => direction;
         set => direction = value;
     }
+    public Coroutine HitCoroutine
+    {
+        get => hitCoroutine;
+        set => hitCoroutine = value;
+    }
     public Coroutine AttackCoroutine
     {
         get => attackCoroutine;
@@ -241,30 +281,40 @@ public class Enemy : MonoBehaviour, IHitable
         get => hp;
         set
         {
-            hp = value;
-            if(hp <= 0)
+            if (hp != value)
+            {
+                Hit();
+                hp = value;
+            }
+            if (hp <= 0)
             {
                 spineAnimator.SetBool(SpineDieAnimId, true);
-                //여기에 URP그래프 하면 될 듯
+                if (hitCoroutine != null)
+                {
+                    StopCoroutine(hitCoroutine);
+                    hitCoroutine = null;
+                }
+                    //여기에 URP그래프 하면 될 듯
+                }
             }
-        }
     }
     #endregion
     protected virtual void Start()
     {
         //정의
-        agent = GetComponent<NavMeshAgent>();
-        heardTargetLayerMask = 1 << 6;
-        lookTargetLayerMask = 1 << 7;
-        sm = new StateMachine<Enemy>();
-        sm.owner = this;
-        maxDistance = 15f;
-        hp = 100;
+        agent =                     GetComponent<NavMeshAgent>();
+        heardTargetLayerMask =      1 << 6;
+        lookTargetLayerMask =       1 << 7;
+        sm =                        new StateMachine<Enemy>();
+        sm.owner =                  this;
+        maxDistance =               15f;
+        hp =                        100;
+        originHeadLightTrans =      Vector3.zero;
         //정의
-        spineRunAnimId = Animator.StringToHash("Run");
-        spineDieAnimId = Animator.StringToHash("Die");
-        weaponAnimId = Animator.StringToHash("EnemyFire");
-        idleAnimId = Animator.StringToHash("Idle");
+        spineRunAnimId =            Animator.StringToHash("Run");
+        spineDieAnimId =            Animator.StringToHash("Die");
+        weaponAnimId =              Animator.StringToHash("EnemyFire");
+        idleAnimId =                Animator.StringToHash("Idle");
 
         sm.AddState("Wander", new EnemyWanderState());
         sm.AddState("Attack", new EnemyAttackState());
@@ -298,21 +348,35 @@ public class Enemy : MonoBehaviour, IHitable
     }
     void HandleStateChange()
     {
+        Vector3 leftBoundary = Quaternion.Euler(0, -75, 0) * transform.forward * maxDistance;
+        Vector3 rightBoundary = Quaternion.Euler(0, 75, 0) * transform.forward * maxDistance;
+
+        Debug.DrawLine(transform.position, transform.position + leftBoundary, Color.green);
+        Debug.DrawLine(transform.position, transform.position + rightBoundary, Color.green);
         if (lookCol.Length > 0) // 내 시야 범위에는 들어왔다.
         {
             RaycastHit hit;
-            direction = ((lookCol[0].transform.position) - transform.position).normalized; // 그래서 내 방향을 설정한다
-            Debug.DrawLine(headTrans.position, headTrans.position + (direction * maxDistance), Color.red);
-            if (Physics.Raycast(headTrans.position, direction, out hit, maxDistance)) // 그 방향대로 들어온놈이랑 선을 이어본다
+
+            // 방향 벡터 계산
+            direction = (lookCol[0].transform.position - transform.position).normalized;
+
+            // 정면 벡터와의 각도를 계산
+            float angle = Vector3.Dot(transform.forward, direction); // -1 ~ 1 사이 값
+            if (angle > Mathf.Cos(75f * Mathf.Deg2Rad)) // 90도 시야 -> 각도 절반인 45도 사용
             {
-                if (CheckInLayerMask(hit.collider.gameObject.layer)) // 이었더니 그 놈이 내가 찾는 놈이고 장애물이 없다
+                Debug.DrawLine(headTrans.position, headTrans.position + (direction * maxDistance), Color.red);
+
+                if (Physics.Raycast(headTrans.position, direction, out hit, maxDistance)) // 그 방향대로 들어온놈이랑 선을 이어본다
                 {
-                    PlayerTrans = hit.collider.gameObject.transform;
-                    sm.SetState("Attack");
-                }
-                else
-                {
-                    sm.SetState("KeepAttack");
+                    if (CheckInLayerMask(hit.collider.gameObject.layer)) // 이었더니 그 놈이 내가 찾는 놈이고 장애물이 없다
+                    {
+                        PlayerTrans = hit.collider.gameObject.transform;
+                        sm.SetState("Attack");
+                    }
+                    else
+                    {
+                        sm.SetState("KeepAttack");
+                    }
                 }
             }
         }
@@ -345,16 +409,24 @@ public class Enemy : MonoBehaviour, IHitable
     {
         enStrategy.Attack();
     }
+    public void Hit()
+    {
+        enStrategy.Hit();
+    }
+    public IEnumerator HitCo()
+    {
+        time = 0;
+        headLight.color = Color.red;
+        agent.speed = 5f;
+        while(time < 4)
+        {
+            time += Time.deltaTime;
+            headLight.transform.rotation *= Quaternion.Euler(0, 180 * Time.deltaTime, 0);
+            yield return null;
+        }
+        headLight.color = Color.white;
+        headLight.transform.rotation = Quaternion.Euler(0, 90, 0);
+        agent.speed = 3.5f;
+        hitCoroutine = null;
+    }
 }
-// 움직이는 것은 state에서 한다.
-// 또한 옆에 있는 놈이 attackState라면 정보를 공유해서 한다
-// 짤짤이들만 옆에 있는 놈들이 attack인 것에 영향을 받는다.
-// 하지만 싸우게 되면 평생 싸워야 된다는 문제가 생긴다.
-// 싸움을 하게된다면 풀어지는 방법도 있어야 할 터
-// ChaseState가 된다면 sound를 쫓으면 되고
-// AttackState가 된다면 Player를 쫓으며 쏘면 된다.
-// 어떻게든 가능하다.라는 것.
-// enemy가 쏘는 총알들만 LayerMask를 줘서 해결해보자.
-// 방법
-// 1. overlapSphare에서 몬스터가 생성하는 총알 Layer를 감지한다.
-// 2. 총알을 감지했을 때 sm.curstate != AttackState라면 AttackState가 된다.

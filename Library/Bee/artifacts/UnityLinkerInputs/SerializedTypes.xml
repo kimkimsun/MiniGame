@@ -7,11 +7,15 @@
 		<type fullname="UnityEngine.Animations.Rigging.WeightedTransformArray" preserve="nothing" serialized="true"/>
 	</assembly>
 	<assembly fullname="Unity.Cinemachine">
+		<type fullname="Unity.Cinemachine.CameraTarget" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineBlendDefinition" preserve="nothing" serialized="true"/>
+		<type fullname="Unity.Cinemachine.CinemachineBlenderSettings/CustomBlend" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineBrain/LensModeOverrideSettings" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineLegacyCameraEvents/OnCameraLiveEvent" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineVirtualCamera/LegacyTransitionParams" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.LegacyLensSettings" preserve="nothing" serialized="true"/>
+		<type fullname="Unity.Cinemachine.LensSettings" preserve="nothing" serialized="true"/>
+		<type fullname="Unity.Cinemachine.LensSettings/PhysicalSettings" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.NoiseSettings/NoiseParams" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.NoiseSettings/TransformNoiseParams" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.PrioritySettings" preserve="nothing" serialized="true"/>
@@ -107,11 +111,19 @@
 		<type fullname="TMPro.TMP_Style" preserve="nothing" serialized="true"/>
 		<type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true"/>
 	</assembly>
+	<assembly fullname="Unity.Timeline">
+		<type fullname="UnityEngine.Timeline.MarkerList" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Timeline.SignalReceiver/EventKeyValue" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Timeline.TimelineAsset/EditorSettings" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Timeline.TimelineClip" preserve="nothing" serialized="true"/>
+	</assembly>
 	<assembly fullname="UnityEngine.CoreModule">
 		<type fullname="UnityEngine.Bounds" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.ExposedReference`1" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.Rendering.RenderPipelineGraphicsSettingsCollection" preserve="nothing" serialized="true"/>
 	</assembly>

@@ -188,15 +188,11 @@ namespace StarterAssets
                 // 마우스라면 1.0을 반환하며 X와 Y에 대한 속도를 정해준다.
                 _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
                 _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
-                //_cinemachineFirstTargetYaw += _input.look.x * deltaTimeMultiplier;
-                //_cinemachineFirstTargetPitch += _input.look.y * deltaTimeMultiplier;
             }
 
             // 좌우 상화에 대한 각도를 제한 하는 함수
             _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-           // _cinemachineFirstTargetYaw = ClampAngle(_cinemachineFirstTargetYaw, float.MinValue, float.MaxValue);
-           // _cinemachineFirstTargetPitch = ClampAngle(_cinemachineFirstTargetPitch, firstBottomClamp, firstTopClamp);
             // float.minValue와 max는 float으로 표현할 수 있는 가장 작은 수와 가장 큰 수를 뜻한다. 즉, 한계가 없다는 것
             // -999999999, 99999999999이런거와 똑같음
 

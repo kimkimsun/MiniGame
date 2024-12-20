@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e02c44940a565674f842caa5e35ee2d2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Panel_02.prefab
+  uploadId: 716084

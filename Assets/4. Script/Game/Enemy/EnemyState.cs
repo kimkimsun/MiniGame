@@ -52,11 +52,13 @@ public class EnemyChaseState : EnemyState // 추격 State
     {
         Debug.Log("chase 들어옴");
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
+        owner.Agent.speed = 5;
     }
 
     public override void Exit()
     {
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, false);
+        owner.Agent.speed = 3.5f;
     }
 
     public override void Update()
@@ -125,6 +127,7 @@ public class EnemyKeepAttackState : EnemyState // 공격 State
         owner.Agent.SetDestination(player.transform.position);
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, true);
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
+        owner.Agent.speed = 5;
     }
 
     public override void Exit()
@@ -132,6 +135,8 @@ public class EnemyKeepAttackState : EnemyState // 공격 State
         owner.IsKeep = true;
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, false);
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, false);
+        owner.Agent.speed = 3.5f;
+
         if (owner.AttackCoroutine != null)
         {
             owner.StopCoroutine(owner.AttackCoroutine); // 실행 중인 코루틴 중단
@@ -142,7 +147,7 @@ public class EnemyKeepAttackState : EnemyState // 공격 State
     {
         // 목표 지점 도달 여부 확인
         if (!owner.Agent.pathPending && // 에이전트가 새로운 경로를 계산 중이지 아니하고,
-            owner.Agent.remainingDistance /* 위치까지 남은거리가 */<= owner.Agent.stoppingDistance/* */)
+            owner.Agent.remainingDistance /* 위치까지 남은거리가 */<= owner.Agent.stoppingDistance/* 도착했다고 판단을하면 */)
         {
             Exit();
         }

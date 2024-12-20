@@ -10,17 +10,12 @@ public class PlayerAim : MonoBehaviour, IAttackable
 {
     [Header("Aim")]
     [SerializeField] private CinemachineVirtualCamera aimCam;
-    [SerializeField] private Image                    thirdPersonaimImage;
     [SerializeField] private GameObject               aimObj;
     [SerializeField] private GameObject               bulletObj;
-    [SerializeField] private TextMeshProUGUI          bulletCountText;
     [SerializeField] private Transform                bulletPoint;
     [SerializeField] private Transform                playerSpine;
 
     [Header("Hide")]
-    [SerializeField] private Image                    interactiveImage;
-    [SerializeField] private Image                    firstPersonaimImage;
-    [SerializeField] private TextMeshProUGUI          interactiveText;
     [SerializeField] private CinemachineVirtualCamera firstPersonCamera;
     [SerializeField] private Transform                firstControllerCameraTarget;
 
@@ -29,15 +24,26 @@ public class PlayerAim : MonoBehaviour, IAttackable
     [SerializeField] private GameObject               shootSound;
     [SerializeField] private GameObject               ReloadSound;
 
+    [Header("Weapon")]
+    [SerializeField] private Transform                backGunSlot;
+    [SerializeField] private Transform                handGunSlot;
+    [SerializeField] private GameObject               gun;
 
     private StarterAssetsInputs   input;
     private GameObject            bulletParticle;
+    private GameObject            hitObj;
     private ThirdPersonController controller;
     private CharacterController   characterController;
     private Animator              anim;
     private GameManager           gmInstance;
     private UIManager             umInstance;    
     private AudioManager          amInstance;
+    private Coroutine             shootingCoroutine;
+    private Image                 thirdPersonaimImage;
+    private Image                 interactiveImage;
+    private Image                 firstPersonaimImage;
+    private TextMeshProUGUI       bulletCountText;
+    private TextMeshProUGUI       interactiveText;
     private Color                 findHitableColor;
     private Color                 originColor;
     private Vector3               screenCenter;
@@ -46,7 +52,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
     private RaycastHit            hit;
     private IEnumerator           shootingCo;
     private IHitable              enemy;
-    private Coroutine             shootingCoroutine;
+    private IInteractive          interactiveObj;
     private float                 aimObjDistance;
     private float                 maxDistance;
     private float                 rotationSpeed;
@@ -56,9 +62,31 @@ public class PlayerAim : MonoBehaviour, IAttackable
     private int                   layerMask;
     private bool                  isShooting;
     private bool                  isHide;
+    private bool                  isFindHitable;
+    private bool                  isFindInterractive;
     private string                hideType;
 
 
+    public StarterAssetsInputs _Input
+    {
+        get => input;
+        set => input = value;
+    }
+    public GameObject Gun
+    {
+        get => gun;
+        set => gun = value;
+    }
+    public Transform BackGunSlot
+    {
+        get => backGunSlot;
+        set => backGunSlot = value;
+    }
+    public Transform HackGunSlot
+    {
+        get => handGunSlot;
+        set => handGunSlot = value;
+    }
     public int Power 
     {
         get => power;
@@ -92,7 +120,11 @@ public class PlayerAim : MonoBehaviour, IAttackable
         input =                 GetComponent<StarterAssetsInputs>();
         controller =            GetComponent<ThirdPersonController>();
         anim =                  GetComponent<Animator>();
-
+        thirdPersonaimImage =   umInstance.thirdPersonAimImage;
+        bulletCountText =       umInstance.bulletCount;
+        interactiveImage =      umInstance.interactiveImage;
+        firstPersonaimImage =   umInstance.firstPersonAimImage;
+        interactiveText =       umInstance.interactiveText;
         gmInstance.CreatePool(bulletObj, 5);
         amInstance.CreateSoundPool(shootSound,5);
 
@@ -110,7 +142,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
         if (input.reload && !controller.isReload)
         {
             StopCoroutine(shootingCo);
-            amInstance.PlaySound(ReloadSound, this.transform.position);
+            amInstance.PlaySound(ReloadSound, transform.position);
             input.reload = false;
             AimControll(false);
             anim.SetLayerWeight(1,1);
@@ -136,17 +168,30 @@ public class PlayerAim : MonoBehaviour, IAttackable
             {
                 aimObj.transform.position = hit.point;
                 targetPosition = hit.point;
-
-                if (hit.collider.gameObject.TryGetComponent<IHitable>(out IHitable obj))
+                hitObj = hit.collider.gameObject;
+                if (hitObj.TryGetComponent<IHitable>(out IHitable HitableObj))
                 {
-                    thirdPersonaimImage.color = findHitableColor;
-                    enemy = obj;
+                    isFindHitable = true;
+                    if (HitableObj != null) enemy = HitableObj;
                 }
                 else
                 {
+                    isFindHitable = false;
                     enemy = null;
                     thirdPersonaimImage.color = originColor;
                 }
+                if(hitObj.TryGetComponent<IInteractive>(out IInteractive InteractiveObj))
+                {
+                    isFindInterractive = true;
+                    if (InteractiveObj != null) interactiveObj = InteractiveObj;
+                }
+                else
+                {
+                    isFindInterractive = false;
+                    interactiveObj = null;
+                    thirdPersonaimImage.color = originColor;
+                }
+                if (isFindHitable || isFindInterractive) thirdPersonaimImage.color = findHitableColor;
             }
             else
             {
@@ -186,6 +231,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
         while(true)
         {
             if (enemy != null) enemy.Hp -= power;
+            if (interactiveObj != null) interactiveObj.Interactive();
             amInstance.PlaySound(shootSound, this.transform.position);
             currentBullet--;
             BulletCountUpdate(currentBullet);
@@ -267,7 +313,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * maxDistance, Color.red);
             if (Physics.Raycast(ray, out hit, maxDistance))
             {
-                if (hit.transform.TryGetComponent<IInteractive>(out IInteractive hitResult) &&
+                if (hit.transform.TryGetComponent<IHideable>(out IHideable hitResult) &&
                     controller.Grounded && input.IsDefaultState() && !isHide)
                 {
                     InteractiveUISet(true);

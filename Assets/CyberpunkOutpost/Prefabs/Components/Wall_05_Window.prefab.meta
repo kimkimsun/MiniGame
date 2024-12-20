@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d5dbcbc82ca12bd409c0723b67cdaacb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 153311
+  packageName: Cyberpunk Outpost
+  packageVersion: 1.2
+  assetPath: Assets/CyberpunkOutpost/Prefabs/Components/Wall_05_Window.prefab
+  uploadId: 716084
