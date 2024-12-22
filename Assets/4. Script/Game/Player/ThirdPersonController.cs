@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 #endif
 
 namespace StarterAssets
@@ -83,6 +84,7 @@ namespace StarterAssets
         private CharacterController _controller;
         private CapsuleCollider _collider;
         private StarterAssetsInputs _input;
+        private AudioManager amInstance;
         private GameObject _mainCamera;
         private Vector3 idleVec;
         private Vector3 crouchVec;
@@ -115,6 +117,7 @@ namespace StarterAssets
 
         private void Start()
         {
+            amInstance = AudioManager.Instance;
             _cinemachineTargetYaw = CinemachineCameraThirdTarget.transform.rotation.eulerAngles.y;
 
             _hasAnimator = TryGetComponent(out _animator);
@@ -379,7 +382,7 @@ namespace StarterAssets
                 if (FootstepAudioClips.Length > 0)
                 {
                     var index = Random.Range(0, FootstepAudioClips.Length);
-                    AudioManager.Instance.PlaySound(FootstepAudioClips[index], this.transform.position);
+                    amInstance.PlaySound(FootstepAudioClips[index], this.transform.position, 6);
                 }
             }
         }
@@ -388,7 +391,7 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioManager.Instance.PlaySound(LandingAudioClip, this.transform.position);
+                amInstance.PlaySound(LandingAudioClip, this.transform.position, 6);
             }
         }
     }

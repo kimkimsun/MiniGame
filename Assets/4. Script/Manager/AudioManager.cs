@@ -6,15 +6,13 @@ public class AudioManager : SingleTon<AudioManager>
 {
     // 사운드 타입별로 AudioSource 풀을 저장하는 Dictionary
     public Dictionary<string, Queue<AudioSource>> audioSourcePools = new Dictionary<string, Queue<AudioSource>>();
-    private void Start()
-    {
-        audioSourcePools.Clear();
-    }
     // 특정 사운드에 대한 풀 생성
     public void CreateSoundPool(GameObject audioSourcePrefab, int poolSize)
     {
         string soundKey = audioSourcePrefab.name;
-        if(!audioSourcePools.ContainsKey(soundKey)) audioSourcePools[soundKey] = new Queue<AudioSource>();
+        if (!audioSourcePools.ContainsKey(soundKey))
+            audioSourcePools[soundKey] = new Queue<AudioSource>();
+
         for (int i = 0; i < poolSize; i++)
         {
             GameObject obj = Instantiate(audioSourcePrefab);
@@ -25,28 +23,47 @@ public class AudioManager : SingleTon<AudioManager>
     }
 
     // 사운드 재생
-    public void PlaySound(GameObject audioSourcePrefab, Vector3 position)
+    public void PlaySound(GameObject audioSourcePrefab, Vector3 position, int layer = -1)
     {
         string soundKey = audioSourcePrefab.name;
-        Debug.Log(soundKey);
+
+        // 큐가 비어있는지 먼저 확인
         if (audioSourcePools.ContainsKey(soundKey) && audioSourcePools[soundKey].Count > 0)
         {
             AudioSource source = audioSourcePools[soundKey].Dequeue();
-            //가져 가려고는 했다만 이게 지금 있긴 하다만 흠... 하나만 더 체크
-            source.transform.position = position;
-            source.gameObject.SetActive(true);
-            source.gameObject.layer = 6;
-            source.Play();
-            StartCoroutine(ReturnToPool(soundKey, source, source.clip.length));
+
+            // Dequeue된 객체가 null인 경우
+            if (source == null)
+            {
+                audioSourcePools[soundKey].Clear();
+                CreateAndPlayNewAudioSource(audioSourcePrefab, position, layer);
+            }
+            else
+            {
+                source.transform.position = position;
+                source.gameObject.SetActive(true);
+                if (layer != -1) source.gameObject.layer = layer;
+                source.Play();
+                StartCoroutine(ReturnToPool(soundKey, source, source.clip.length));
+            }
         }
         else
         {
-            Debug.Log("여기?222");
-            GameObject newSound = Instantiate(audioSourcePrefab);
-            newSound.name = audioSourcePrefab.name;
-            AudioSource source = newSound.GetComponent<AudioSource>();
-            StartCoroutine(ReturnToPool(soundKey, source, source.clip.length));
+            CreateAndPlayNewAudioSource(audioSourcePrefab, position, layer);
         }
+    }
+
+    // 새로운 AudioSource 생성 및 재생
+    private void CreateAndPlayNewAudioSource(GameObject audioSourcePrefab, Vector3 position, int layer = -1)
+    {
+        GameObject newSound = Instantiate(audioSourcePrefab);
+        newSound.name = audioSourcePrefab.name;
+        AudioSource source = newSound.GetComponent<AudioSource>();
+        source.transform.position = position;
+        source.gameObject.SetActive(true);
+        if (layer != -1) source.gameObject.layer = layer;
+        source.Play();
+        StartCoroutine(ReturnToPool(newSound.name, source, source.clip.length));
     }
 
     // 풀에 다시 추가
@@ -62,7 +79,6 @@ public class AudioManager : SingleTon<AudioManager>
         else
         {
             audioSourcePools[soundKey] = new Queue<AudioSource>();
-            source.gameObject.SetActive(false);
             audioSourcePools[soundKey].Enqueue(source);
         }
     }

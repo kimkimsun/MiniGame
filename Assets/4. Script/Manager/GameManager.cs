@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,17 +26,27 @@ public class GameManager : SingleTon<GameManager>
     {
         string key = prefab.name;
 
+        // 키가 존재하고 큐에 요소가 있을 경우
         if (poolDictionary.ContainsKey(key) && poolDictionary[key].Count > 0)
         {
-            GameObject obj = poolDictionary[key].Dequeue();
+            GameObject obj = poolDictionary[key].Dequeue(); // 큐에서 객체를 가져옴
+
+            // Dequeue된 객체가 null일 경우를 체크
+            if (obj == null)
+            {
+                Debug.LogWarning($"Object in pool '{key}' was null. Creating a new instance.");
+                return Instantiate(prefab); // 새로 생성하여 반환
+            }
+
             obj.SetActive(true);
             return obj;
         }
         else
         {
+            Debug.LogWarning($"Pool for '{key}' is empty or does not exist. Creating a new instance.");
             GameObject newObj = Instantiate(prefab);
-            newObj.name = prefab.name;
-            return newObj; // 부족할 경우 새로 생성
+            newObj.name = prefab.name; // 키 통일을 위해 이름 설정
+            return newObj;
         }
     }
     public void ReturnToPool(GameObject obj)
@@ -51,7 +60,9 @@ public class GameManager : SingleTon<GameManager>
         }
         else
         {
-            Destroy(obj); // 풀을 생성 안하고 사용했을 때에 대비한 예외처리
+            poolDictionary[key] = new Queue<GameObject>();
+            obj.gameObject.SetActive(false);
+            poolDictionary[key].Enqueue(obj);
         }
     }
     private void Update()

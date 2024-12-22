@@ -118,13 +118,13 @@ public class EnemyAttackState : EnemyState // 공격 State
 }
 public class EnemyKeepAttackState : EnemyState // 공격 State
 {
-    Player player = GameManager.Instance.player;
+    //Player player = GameManager.Instance.player;
     public override void Enter()
     {
         owner.IsKeep = false;
         Debug.LogWarning("keepattack에 들어오는건가?");
         owner.Attack();
-        owner.Agent.SetDestination(player.transform.position);
+        //owner.Agent.SetDestination(player.transform.position);
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, true);
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
         owner.Agent.speed = 5;

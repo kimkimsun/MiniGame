@@ -56,6 +56,7 @@ public class MiniEnemyStrategy : EnemyStrategy
     GameObject bullet;
     float fireRate = 1f;
     float speed = 25f;
+    float time = 0;
     bool isShooting;
     public MiniEnemyStrategy(Enemy owner)
     {
@@ -92,12 +93,28 @@ public class MiniEnemyStrategy : EnemyStrategy
     {
         if (owner.HitCoroutine == null)
         {
-            owner.HitCoroutine = owner.StartCoroutine(owner.HitCo());
+            owner.HitCoroutine = owner.StartCoroutine(HitCo());
         }
         else
         {
             owner._Time = 0;
         }
+    }
+    IEnumerator HitCo()
+    {
+        time = 0;
+        owner.HeadLight.color = Color.red;
+        owner.Agent.speed = 5f;
+        while (time < 4)
+        {
+            time += Time.deltaTime;
+            owner.HeadLight.transform.rotation *= Quaternion.Euler(0, 180 * Time.deltaTime, 0);
+            yield return null;
+        }
+        owner.HeadLight.color = Color.white;
+        owner.HeadLight.transform.rotation = Quaternion.Euler(0, 90, 0);
+        owner.Agent.speed = 3.5f;
+        owner.HitCoroutine = null;
     }
 }
 
@@ -155,15 +172,15 @@ public class Enemy : MonoBehaviour, IHitable
 
     #region 프로퍼티
 
+    public Light HeadLight
+    {
+        get => headLight; 
+        set => headLight = value;
+    }
     public float _Time
     {
         get => time;
         set => time = value;
-    }
-    public Light HeadLight
-    {
-        get => headLight;
-        set => headLight = value;
     }
     public Transform HeadTreans
     {
@@ -302,6 +319,7 @@ public class Enemy : MonoBehaviour, IHitable
     protected virtual void Start()
     {
         //정의
+        IsKeep = true;
         agent =                     GetComponent<NavMeshAgent>();
         heardTargetLayerMask =      1 << 6;
         lookTargetLayerMask =       1 << 7;
@@ -342,6 +360,7 @@ public class Enemy : MonoBehaviour, IHitable
     void Update()
     {
         sm.curState?.Update();
+        if (Input.GetKeyDown(KeyCode.X)) Hp -= 10;
         soundCol = Physics.OverlapSphere(transform.position, soundDetectionRange, heardTargetLayerMask);
         lookCol = Physics.OverlapSphere(transform.position, lookDetectionRange, lookTargetLayerMask);
         HandleStateChange();
@@ -359,7 +378,7 @@ public class Enemy : MonoBehaviour, IHitable
 
             // 방향 벡터 계산
             direction = (lookCol[0].transform.position - transform.position).normalized;
-
+                
             // 정면 벡터와의 각도를 계산
             float angle = Vector3.Dot(transform.forward, direction); // -1 ~ 1 사이 값
             if (angle > Mathf.Cos(75f * Mathf.Deg2Rad)) // 90도 시야 -> 각도 절반인 45도 사용
@@ -370,10 +389,11 @@ public class Enemy : MonoBehaviour, IHitable
                 {
                     if (CheckInLayerMask(hit.collider.gameObject.layer)) // 이었더니 그 놈이 내가 찾는 놈이고 장애물이 없다
                     {
+                        Debug.Log(playerTrans.position + "실시간으로 갱신중인건가?");
                         PlayerTrans = hit.collider.gameObject.transform;
                         sm.SetState("Attack");
                     }
-                    else
+                    else if(!CheckInLayerMask(hit.collider.gameObject.layer) && sm.curState is EnemyAttackState)
                     {
                         sm.SetState("KeepAttack");
                     }
@@ -384,8 +404,9 @@ public class Enemy : MonoBehaviour, IHitable
         {
             sm.SetState("KeepAttack");
         }
-        else if (soundCol.Length > 0 && IsKeep) // soundCol이 비어있지 않으면 추적 상태로
+        if (soundCol.Length > 0 && IsKeep && sm.curState is not EnemyAttackState) // soundCol이 비어있지 않으면 추적 상태로
         {
+            Debug.Log("안들어온다고?");
             soundTrans = soundCol[0].transform;
             sm.SetState("Chase");
         }
@@ -412,21 +433,5 @@ public class Enemy : MonoBehaviour, IHitable
     public void Hit()
     {
         enStrategy.Hit();
-    }
-    public IEnumerator HitCo()
-    {
-        time = 0;
-        headLight.color = Color.red;
-        agent.speed = 5f;
-        while(time < 4)
-        {
-            time += Time.deltaTime;
-            headLight.transform.rotation *= Quaternion.Euler(0, 180 * Time.deltaTime, 0);
-            yield return null;
-        }
-        headLight.color = Color.white;
-        headLight.transform.rotation = Quaternion.Euler(0, 90, 0);
-        agent.speed = 3.5f;
-        hitCoroutine = null;
     }
 }

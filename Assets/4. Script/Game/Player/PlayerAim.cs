@@ -142,7 +142,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
         if (input.reload && !controller.isReload)
         {
             StopCoroutine(shootingCo);
-            amInstance.PlaySound(ReloadSound, transform.position);
+            amInstance.PlaySound(ReloadSound, transform.position, 6);
             input.reload = false;
             AimControll(false);
             anim.SetLayerWeight(1,1);
@@ -232,7 +232,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
         {
             if (enemy != null) enemy.Hp -= power;
             if (interactiveObj != null) interactiveObj.Interactive();
-            amInstance.PlaySound(shootSound, this.transform.position);
+            amInstance.PlaySound(shootSound, this.transform.position, 6);
             currentBullet--;
             BulletCountUpdate(currentBullet);
             bulletParticle = gmInstance.GetFromPool(bulletObj);
