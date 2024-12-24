@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+using UnityEngine.Windows;
 #endif
 
 namespace StarterAssets
@@ -43,9 +43,15 @@ namespace StarterAssets
         public float firstTopClamp = 0;
         public float firstBottomClamp = 0;
         public float CameraAngleOverride = 0.0f;
+        public float mouseSensitivity = 1.0f;
+        public float mouseVerticalSensitivity = 1.0f;
+        public float mouseHorizontalSensitivity = 1.0f;
+        public float mouseAimVerticalSensitivity = 1.0f;
+        public float mouseAimHorizontalSensitivity = 1.0f;
         public bool LockCameraPosition = false;
         public bool isAimMove;
         public bool isReload;
+        public bool isHurt;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -81,6 +87,7 @@ namespace StarterAssets
         private PlayerInput _playerInput;
 #endif
         private Animator _animator;
+        private Player player;
         private CharacterController _controller;
         private CapsuleCollider _collider;
         private StarterAssetsInputs _input;
@@ -121,6 +128,7 @@ namespace StarterAssets
             _cinemachineTargetYaw = CinemachineCameraThirdTarget.transform.rotation.eulerAngles.y;
 
             _hasAnimator = TryGetComponent(out _animator);
+            player = GetComponent<Player>();    
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
             _collider = GetComponent<CapsuleCollider>();
@@ -199,20 +207,28 @@ namespace StarterAssets
             // float.minValue와 max는 float으로 표현할 수 있는 가장 작은 수와 가장 큰 수를 뜻한다. 즉, 한계가 없다는 것
             // -999999999, 99999999999이런거와 똑같음
 
-           
-
-            CinemachineCameraThirdTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
             Quaternion currentRotation = playerSpine.rotation;
             float currentY = currentRotation.eulerAngles.y;
             float currentZ = currentRotation.eulerAngles.z;
-            if(_input.aim) playerSpine.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, currentY+ aimRotationYFix, currentZ);
-            // 그에 따른 target의 회전각을 바꾼다.
+
+            if (_input.aim)
+            {
+                CinemachineCameraThirdTarget.transform.rotation =
+                   Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride) * mouseAimVerticalSensitivity * mouseSensitivity,
+                                    _cinemachineTargetYaw * mouseAimHorizontalSensitivity * mouseSensitivity, 0.0f);
+                playerSpine.rotation = Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride)/* * mouseAimVerticalSensitivity * mouseSensitivity*/,
+                                                          currentY + aimRotationYFix, currentZ);
+            }
+            else
+            {
+                CinemachineCameraThirdTarget.transform.rotation =
+                   Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride) * mouseVerticalSensitivity * mouseSensitivity,
+                                    _cinemachineTargetYaw * mouseHorizontalSensitivity * mouseSensitivity, 0.0f);
+            }
         }
 
         private void Move()
         {
-            targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
             _controller.center = idleVec;
             _controller.height = 1.8f;
             _collider.center = idleVec;
@@ -241,7 +257,19 @@ namespace StarterAssets
                 _animator.SetBool(_animIDCrouch, false);
             }
             // 캐릭터의 이동 속도가 Shift를 눌렀을 때와 안 눌렀을 때의 구분
-            if (isAimMove || isReload) targetSpeed = MoveSpeed;
+            if (player.IsHurt)
+            {
+                if (isAimMove || isReload)
+                {
+                    targetSpeed = player.Speed / 1.2f;
+                }
+                else
+                {
+                    targetSpeed = _input.sprint ? player.Speed : player.SprintSpeed;
+                }
+            }
+            else if (isAimMove || isReload) targetSpeed = MoveSpeed;
+            else targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
             // 조준 중이거나 Reload중이라면 Shift를 누르더라도 걷는 속도
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
             // 안움직이다면 0으로 초기화
@@ -300,6 +328,11 @@ namespace StarterAssets
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
                 // 애니메이터 파라미터의 value값
             }
+        }
+
+        private void SpeedAffected()
+        {
+
         }
 
         private void JumpAndGravity()
@@ -362,24 +395,11 @@ namespace StarterAssets
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
 
-        private void OnDrawGizmosSelected()
+        private void OnFootstep()
         {
-            Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-            Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
-
-            if (Grounded) Gizmos.color = transparentGreen;
-            else Gizmos.color = transparentRed;
-
-            Gizmos.DrawSphere(
-                new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
-                GroundedRadius);
-        }
-
-        private void OnFootstep(AnimationEvent animationEvent)
-        {
-            if (animationEvent.animatorClipInfo.weight > 0.5f)
+            if (FootstepAudioClips.Length > 0)
             {
-                if (FootstepAudioClips.Length > 0)
+                if (Random.Range(0, 10) < 2)
                 {
                     var index = Random.Range(0, FootstepAudioClips.Length);
                     amInstance.PlaySound(FootstepAudioClips[index], this.transform.position, 6);

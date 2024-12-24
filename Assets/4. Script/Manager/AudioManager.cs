@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class AudioManager : SingleTon<AudioManager>
 {
     // 사운드 타입별로 AudioSource 풀을 저장하는 Dictionary
     public Dictionary<string, Queue<AudioSource>> audioSourcePools = new Dictionary<string, Queue<AudioSource>>();
+    public ThirdPersonController player;
+    public float volume = 10;
     // 특정 사운드에 대한 풀 생성
     public void CreateSoundPool(GameObject audioSourcePrefab, int poolSize)
     {
@@ -43,6 +46,7 @@ public class AudioManager : SingleTon<AudioManager>
                 source.transform.position = position;
                 source.gameObject.SetActive(true);
                 if (layer != -1) source.gameObject.layer = layer;
+                source.volume = this.volume;
                 source.Play();
                 StartCoroutine(ReturnToPool(soundKey, source, source.clip.length));
             }
@@ -62,6 +66,7 @@ public class AudioManager : SingleTon<AudioManager>
         source.transform.position = position;
         source.gameObject.SetActive(true);
         if (layer != -1) source.gameObject.layer = layer;
+        source.volume = this.volume;
         source.Play();
         StartCoroutine(ReturnToPool(newSound.name, source, source.clip.length));
     }
@@ -71,7 +76,6 @@ public class AudioManager : SingleTon<AudioManager>
     {
         yield return new WaitForSeconds(delay);
         source.gameObject.SetActive(false);
-
         if (audioSourcePools.ContainsKey(soundKey))
         {
             audioSourcePools[soundKey].Enqueue(source);

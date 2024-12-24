@@ -10,6 +10,7 @@ namespace InterfaceManager
     }
     public interface IHitable
     {
+        public void Hit(IAttackable attackObj);
         public float Hp
         {  get; set; }
     }

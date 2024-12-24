@@ -11,6 +11,7 @@ public abstract class EnemyStrategy
     public abstract void Init();
     public abstract void Attack();
     public abstract void Hit();
+    public abstract void Die();
 }
 public class BossEnemyStrategy : EnemyStrategy
 {
@@ -28,6 +29,10 @@ public class BossEnemyStrategy : EnemyStrategy
     }
 
     public override void Hit()
+    {
+    }
+
+    public override void Die()
     {
     }
 }
@@ -49,44 +54,39 @@ public class HorrorEnemyStrategy : EnemyStrategy
     public override void Hit()
     {
     }
+
+    public override void Die()
+    {
+    }
 }
 public class MiniEnemyStrategy : EnemyStrategy
 {
     GameManager gmInstance = GameManager.Instance;
     GameObject bullet;
     float fireRate = 1f;
-    float speed = 25f;
+    float speed = 40f;
     float time = 0;
-    bool isShooting;
+    float matValue;
+    float dieSpeed = 1.7f;
     public MiniEnemyStrategy(Enemy owner)
     {
         this.owner = owner;
-        isShooting = true;
         Init();
     }
     public override void Init()
     {
         bullet = owner.Bullet;
         gmInstance.CreatePool(owner.Bullet, 10);
-        owner.SoundDetectionRange = 20f;
-        owner.LookDetectionRange = 15f;
+        owner.SoundDetectionRange = 15f;
+        owner.LookDetectionRange = 20f;
+        owner.MaxValue = 1.9f;
+        owner.MinValue = -1.6f;
+        matValue = owner.MaxValue;
+        owner.CopyMat.SetFloat("_Split_Value", matValue);
     }
     public override void Attack()
     {
         owner.AttackCoroutine = owner.StartCoroutine(FireCo());
-    }
-    IEnumerator FireCo()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(fireRate);
-            Vector3 bulletDirection = (owner.PlayerTrans.position - owner.BulletHole.transform.position).normalized;
-            bullet = gmInstance.GetFromPool(owner.Bullet);
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.angularVelocity = Vector3.zero; // 초기화(필요하다면)
-            bullet.transform.position = owner.BulletHole.transform.position;
-            rb.AddForce(bulletDirection * speed, ForceMode.Impulse);
-        }
     }
 
     public override void Hit()
@@ -97,11 +97,47 @@ public class MiniEnemyStrategy : EnemyStrategy
         }
         else
         {
-            owner._Time = 0;
+            time = 0;
+        }
+    }
+    public override void Die()
+    {
+        if(owner.DieCoroutine == null)
+        {
+            owner.DieCoroutine = owner.StartCoroutine(DieCo());
+        }
+    }
+    IEnumerator DieCo()
+    {
+        owner.SpineAnimator.SetBool(owner.SpineDieAnimId, true);
+        owner.Agent.enabled = false;
+        while(matValue > owner.MinValue)
+        {
+            matValue -= Time.deltaTime * dieSpeed;
+            owner.CopyMat.SetFloat("_Split_Value", matValue);
+            yield return null;
+        }
+        UIManager.Instance.kills += 1;
+        owner.DieCoroutine = null;
+        owner.gameObject.SetActive(false);
+    }
+    IEnumerator FireCo()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(fireRate);
+            Vector3 bulletDirection = (owner.PlayerTrans.position + owner.CenterTarget - owner.BulletHole.transform.position).normalized;
+            bullet = gmInstance.GetFromPool(owner.Bullet);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.angularVelocity = Vector3.zero; // 초기화(필요하다면)
+            bullet.transform.position = owner.BulletHole.transform.position;
+            rb.AddForce(bulletDirection * speed, ForceMode.Impulse);
         }
     }
     IEnumerator HitCo()
     {
+        owner.SoundDetectionRange = 20f;
+        owner.LookDetectionRange = 30f;
         time = 0;
         owner.HeadLight.color = Color.red;
         owner.Agent.speed = 5f;
@@ -115,7 +151,10 @@ public class MiniEnemyStrategy : EnemyStrategy
         owner.HeadLight.transform.rotation = Quaternion.Euler(0, 90, 0);
         owner.Agent.speed = 3.5f;
         owner.HitCoroutine = null;
+        owner.SoundDetectionRange = 15f;
+        owner.LookDetectionRange = 20f;
     }
+
 }
 
 public enum ENEMY_TYPE
@@ -138,40 +177,73 @@ public class Enemy : MonoBehaviour, IHitable
     [SerializeField] private GameObject     bulletHole;
     [SerializeField] private Animator       spineAnimator;
     [SerializeField] private Animator       weaponAnimator;
+    [SerializeField] private Material       enemyMat;
+    [SerializeField] private Renderer[]     enemyRenderer;
 
     private EnemyStrategy       enStrategy;
     private StateMachine<Enemy> sm;
+    private NavMeshAgent        agent;
     private Collider[]          soundCol;
     private Collider[]          lookCol;
     private Coroutine           hitCoroutine;
     private Coroutine           attackCoroutine;
+    private Coroutine           dieCoroutine;
     private Transform           soundTrans;
     private Transform           playerTrans;
-    private NavMeshAgent        agent;
     private GameObject          obj;
+    private Material            copyMat;
     private LayerMask           heardTargetLayerMask;
     private LayerMask           lookTargetLayerMask;
     private Vector3             direction;
-    private Vector3             originHeadLightTrans;
+    private Vector3             centerTarget;
     private IEnumerator         attackKeepCoroutine;
     private float               soundDetectionRange;
     private float               lookDetectionRange;
     private float               maxDistance;
     private float               hp;
     private float               time;
+    private float               minValue;
+    private float               maxValue;
     private int                 spineRunAnimId;
     private int                 spineDieAnimId;
     private int                 weaponAnimId;
     private int                 idleAnimId;
-    private bool                isHearable;
-    private bool                isPlayerCheck;
-    private bool                isAttack;
     private bool                isKeep;
 
     #endregion
 
     #region 프로퍼티
 
+    public Vector3 CenterTarget
+    {
+        get => centerTarget; 
+        set => centerTarget = value;
+    }
+    public float MaxValue
+    {
+        get => maxValue;
+        set => maxValue = value;
+    }
+    public float MinValue
+    {
+        get => minValue; 
+        set => minValue = value;
+    }
+    public Material CopyMat
+    {
+        get => copyMat;
+        set => copyMat = value;
+    }
+    public Material EnemyMat
+    {
+        get => enemyMat;
+        set => enemyMat = value;
+    }
+    public Coroutine DieCoroutine
+    {
+        get => dieCoroutine; 
+        set => dieCoroutine = value;
+    }
     public Light HeadLight
     {
         get => headLight; 
@@ -305,35 +377,31 @@ public class Enemy : MonoBehaviour, IHitable
             }
             if (hp <= 0)
             {
-                spineAnimator.SetBool(SpineDieAnimId, true);
-                if (hitCoroutine != null)
-                {
-                    StopCoroutine(hitCoroutine);
-                    hitCoroutine = null;
-                }
-                    //여기에 URP그래프 하면 될 듯
-                }
+                Die();
             }
+        }
     }
     #endregion
     protected virtual void Start()
     {
         //정의
-        IsKeep = true;
-        agent =                     GetComponent<NavMeshAgent>();
+        centerTarget = new Vector3(0, 0.4f, 0);
         heardTargetLayerMask =      1 << 6;
         lookTargetLayerMask =       1 << 7;
+        agent =                     GetComponent<NavMeshAgent>();
         sm =                        new StateMachine<Enemy>();
+        IsKeep =                    true;
         sm.owner =                  this;
+        playerTrans =               null;
+        soundTrans =                null;
         maxDistance =               15f;
-        hp =                        100;
-        originHeadLightTrans =      Vector3.zero;
+        hp =                        80;
+        copyMat = Instantiate(enemyMat);
         //정의
         spineRunAnimId =            Animator.StringToHash("Run");
         spineDieAnimId =            Animator.StringToHash("Die");
         weaponAnimId =              Animator.StringToHash("EnemyFire");
         idleAnimId =                Animator.StringToHash("Idle");
-
         sm.AddState("Wander", new EnemyWanderState());
         sm.AddState("Attack", new EnemyAttackState());
         sm.AddState("Chase", new EnemyChaseState());
@@ -356,6 +424,10 @@ public class Enemy : MonoBehaviour, IHitable
                 enStrategy = new MiniEnemyStrategy(this);
                 break;
         }
+        for (int i = 0; i < enemyRenderer.Length; i++)
+        {
+            enemyRenderer[i].material = copyMat;
+        }
     }
     void Update()
     {
@@ -367,8 +439,8 @@ public class Enemy : MonoBehaviour, IHitable
     }
     void HandleStateChange()
     {
-        Vector3 leftBoundary = Quaternion.Euler(0, -75, 0) * transform.forward * maxDistance;
-        Vector3 rightBoundary = Quaternion.Euler(0, 75, 0) * transform.forward * maxDistance;
+        Vector3 leftBoundary = Quaternion.Euler(0, -95, 0) * transform.forward * maxDistance;
+        Vector3 rightBoundary = Quaternion.Euler(0, 95, 0) * transform.forward * maxDistance;
 
         Debug.DrawLine(transform.position, transform.position + leftBoundary, Color.green);
         Debug.DrawLine(transform.position, transform.position + rightBoundary, Color.green);
@@ -381,16 +453,14 @@ public class Enemy : MonoBehaviour, IHitable
                 
             // 정면 벡터와의 각도를 계산
             float angle = Vector3.Dot(transform.forward, direction); // -1 ~ 1 사이 값
-            if (angle > Mathf.Cos(75f * Mathf.Deg2Rad)) // 90도 시야 -> 각도 절반인 45도 사용
+            if (angle > Mathf.Cos(95f * Mathf.Deg2Rad)) // 90도 시야 -> 각도 절반인 45도 사용
             {
                 Debug.DrawLine(headTrans.position, headTrans.position + (direction * maxDistance), Color.red);
-
                 if (Physics.Raycast(headTrans.position, direction, out hit, maxDistance)) // 그 방향대로 들어온놈이랑 선을 이어본다
                 {
                     if (CheckInLayerMask(hit.collider.gameObject.layer)) // 이었더니 그 놈이 내가 찾는 놈이고 장애물이 없다
                     {
-                        Debug.Log(playerTrans.position + "실시간으로 갱신중인건가?");
-                        PlayerTrans = hit.collider.gameObject.transform;
+                        playerTrans = hit.collider.gameObject.transform;
                         sm.SetState("Attack");
                     }
                     else if(!CheckInLayerMask(hit.collider.gameObject.layer) && sm.curState is EnemyAttackState)
@@ -404,13 +474,12 @@ public class Enemy : MonoBehaviour, IHitable
         {
             sm.SetState("KeepAttack");
         }
-        if (soundCol.Length > 0 && IsKeep && sm.curState is not EnemyAttackState) // soundCol이 비어있지 않으면 추적 상태로
+        if (soundCol.Length > 0 && isKeep && sm.curState is not EnemyAttackState) // soundCol이 비어있지 않으면 추적 상태로
         {
-            Debug.Log("안들어온다고?");
             soundTrans = soundCol[0].transform;
             sm.SetState("Chase");
         }
-        else if (lookCol.Length == 0 && soundCol.Length == 0 && IsKeep) // lookCol과 soundCol이 모두 비어 있으면 방황 상태로
+        else if (playerTrans == null && soundTrans == null && isKeep) // lookCol과 soundCol이 모두 비어 있으면 방황 상태로
         {
             sm.SetState("Wander");
         }
@@ -433,5 +502,13 @@ public class Enemy : MonoBehaviour, IHitable
     public void Hit()
     {
         enStrategy.Hit();
+    }
+    public void Die()
+    {
+        enStrategy.Die();
+    }
+    public void Hit(IAttackable attackObj)
+    {
+        Hp -= attackObj.Power;
     }
 }

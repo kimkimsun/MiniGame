@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour, IAttackable
     {
         if(collision.gameObject.TryGetComponent<IHitable>(out IHitable obj))
         {
-            obj.Hp -= power;
+            obj.Hit(this);
         }
         gmInstance.ReturnToPool(gameObject);
         if (setActiveCo != null)

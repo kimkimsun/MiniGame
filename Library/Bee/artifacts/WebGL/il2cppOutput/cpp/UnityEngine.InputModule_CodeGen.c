@@ -9,7 +9,6 @@
 
 extern void NativeUpdateCallback__ctor_m04FDCD50564E7535FADAFF34BBA83500585A84F5 (void);
 extern void NativeUpdateCallback_Invoke_mC4B7018AE8ED52FB9C6805F65C57A81812D21333 (void);
-extern void NativeInputSystem_get_onDeviceDiscovered_mD55A996A1107331B95C4D9409B8D4C98BADB8FCC (void);
 extern void NativeInputSystem_set_onDeviceDiscovered_m8DEE711BB866D1C923DA537B7DE62BF03094D855 (void);
 extern void NativeInputSystem__cctor_mADBD6616441651B2AFE2AD8AF64D63DF0BA66693 (void);
 extern void NativeInputSystem_NotifyBeforeUpdate_m39AE2F1A42BD47200A263AD0EF9EDA5EF4C0042A (void);
@@ -20,18 +19,15 @@ extern void NativeInputSystem_set_hasDeviceDiscoveredCallback_m0979ABC04DBA52617
 extern void NativeInputSystem_get_currentTime_mB10D8CF832AA53952843986F29675B3BC71AAEC9 (void);
 extern void NativeInputSystem_get_currentTimeOffsetToRealtimeSinceStartup_mE5FB513F17BBF2FF45494D1939C44DEBF3040B55 (void);
 extern void NativeInputSystem_AllocateDeviceId_m0F5EA2F96B8C2DB31D86E14B7F3C34105E6D67BA (void);
-extern void NativeInputSystem_QueueInputEvent_m9363FC2953D733EA8A3AE58470A90B4767ED0B7B (void);
 extern void NativeInputSystem_IOCTL_m11AC7B69197C6214E794B563D48FD60E848901E7 (void);
 extern void NativeInputSystem_SetPollingFrequency_mDEF2E1093D0776906BC95CC8E29A143C115910A0 (void);
 extern void NativeInputSystem_Update_m898216ECCA26122D827C2FB45FC4A20296031036 (void);
-extern void NativeInputSystem_get_normalizeScrollWheelDelta_mF633DF00F7F5823179F3473BC5E07BE9BF75A04F (void);
 extern void NativeInputSystem_set_normalizeScrollWheelDelta_mA6CCECFB417A30D7AEB05FDB313FEA28963F012D (void);
 extern void NativeInputSystem_GetScrollWheelDeltaPerTick_mD4FBEBF03836656D5DE3D39A8CEB3CB395DB607B (void);
-static Il2CppMethodPointer s_methodPointers[20] = 
+static Il2CppMethodPointer s_methodPointers[17] = 
 {
 	NativeUpdateCallback__ctor_m04FDCD50564E7535FADAFF34BBA83500585A84F5,
 	NativeUpdateCallback_Invoke_mC4B7018AE8ED52FB9C6805F65C57A81812D21333,
-	NativeInputSystem_get_onDeviceDiscovered_mD55A996A1107331B95C4D9409B8D4C98BADB8FCC,
 	NativeInputSystem_set_onDeviceDiscovered_m8DEE711BB866D1C923DA537B7DE62BF03094D855,
 	NativeInputSystem__cctor_mADBD6616441651B2AFE2AD8AF64D63DF0BA66693,
 	NativeInputSystem_NotifyBeforeUpdate_m39AE2F1A42BD47200A263AD0EF9EDA5EF4C0042A,
@@ -42,42 +38,37 @@ static Il2CppMethodPointer s_methodPointers[20] =
 	NativeInputSystem_get_currentTime_mB10D8CF832AA53952843986F29675B3BC71AAEC9,
 	NativeInputSystem_get_currentTimeOffsetToRealtimeSinceStartup_mE5FB513F17BBF2FF45494D1939C44DEBF3040B55,
 	NativeInputSystem_AllocateDeviceId_m0F5EA2F96B8C2DB31D86E14B7F3C34105E6D67BA,
-	NativeInputSystem_QueueInputEvent_m9363FC2953D733EA8A3AE58470A90B4767ED0B7B,
 	NativeInputSystem_IOCTL_m11AC7B69197C6214E794B563D48FD60E848901E7,
 	NativeInputSystem_SetPollingFrequency_mDEF2E1093D0776906BC95CC8E29A143C115910A0,
 	NativeInputSystem_Update_m898216ECCA26122D827C2FB45FC4A20296031036,
-	NativeInputSystem_get_normalizeScrollWheelDelta_mF633DF00F7F5823179F3473BC5E07BE9BF75A04F,
 	NativeInputSystem_set_normalizeScrollWheelDelta_mA6CCECFB417A30D7AEB05FDB313FEA28963F012D,
 	NativeInputSystem_GetScrollWheelDeltaPerTick_mD4FBEBF03836656D5DE3D39A8CEB3CB395DB607B,
 };
-static const int32_t s_InvokerIndices[20] = 
+static const int32_t s_InvokerIndices[17] = 
 {
-	5173,
-	4601,
-	19917,
-	19475,
-	20001,
-	19471,
-	17652,
-	17653,
-	17648,
-	19461,
-	19876,
-	19876,
-	19897,
-	19473,
-	14800,
-	19486,
-	19471,
-	19862,
-	19461,
-	19960,
+	1629,
+	1567,
+	5539,
+	5734,
+	5534,
+	4925,
+	4926,
+	4921,
+	5529,
+	5646,
+	5646,
+	5662,
+	3685,
+	5548,
+	5534,
+	5529,
+	5715,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_InputModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_InputModule_CodeGenModule = 
 {
 	"UnityEngine.InputModule.dll",
-	20,
+	17,
 	s_methodPointers,
 	0,
 	NULL,

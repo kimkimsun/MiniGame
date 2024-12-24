@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Text;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.LowLevel;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
@@ -20,7 +19,8 @@ public class CutSceneManager : SingleTon<CutSceneManager>
     private PlayableDirector    playableDirector;
     private PlayerAim           player;
     private Vector3             newImageSize;
-    private Vector3             weaponSize;
+    private Vector3             settingWeaponSize;
+    private Vector3             originWeaponSize;
     private char[]              preSettingChars;
     private int                 randomIndex;
     private float               weaponMatGetValue;
@@ -31,6 +31,7 @@ public class CutSceneManager : SingleTon<CutSceneManager>
     private float               playerMatMaxValue;
     private float               weaponSpawnSpeed;
     private float               playerSpawnSpeed;
+    
 
     private void Start()
     {
@@ -41,7 +42,8 @@ public class CutSceneManager : SingleTon<CutSceneManager>
                                                   '\n','\n', '적','을',' ','전','부',' ','처','치','하','고','\n','미','션','을',' ','완','료','하','세','요' };
         stringBuilder =                new StringBuilder(preSettingChars.Length); // 초기화
         newImageSize =                 new Vector3(0.45f, 0.6f, 0);
-        weaponSize =                   new Vector3(0.9f, 0.9f, 0.9f);
+        settingWeaponSize =            new Vector3(0.9f, 0.9f, 0.9f);
+        originWeaponSize =             new Vector3(1, 1, 1);
         weaponMatMinValue =            -0.15f;
         weaponMatMaxValue =            0.8f;
         weaponSpawnSpeed =             0.3f;
@@ -50,22 +52,32 @@ public class CutSceneManager : SingleTon<CutSceneManager>
         playerMatMinValue =            0.1f;
         playerMatMaxValue =            2.1f;
         playerMatGetValue =            playerMatMaxValue;
-        
-        
-        
+
         weaponSpawnMat.SetFloat("_Split_Value", weaponMatMaxValue);
         playerSpawnMat.SetFloat("_Split_Value", playerMatGetValue);
+
+        OriginEveryThing();
+    }
+    public void OriginEveryThing()
+    {
+        playerSpawnMat.SetFloat("_Split_Value", playerMatMaxValue);
+        weaponSpawnMat.SetFloat("_Split_Value", weaponMatMaxValue);
+        player.Gun.gameObject.SetActive(true);
+        player.Gun.transform.parent = player.HandGunSlot;
+        player.Gun.transform.localScale = originWeaponSize;
+        player.Gun.transform.position = player.HandGunSlot.transform.position;
+        player.Gun.transform.rotation = player.HandGunSlot.transform.rotation;
     }
     public void StartSetting()
     {
         weaponSpawnMat.SetFloat("_Split_Value", weaponMatGetValue);
         player.Gun.transform.parent = player.BackGunSlot;
-        player.Gun.transform.localScale = weaponSize;
+        player.Gun.transform.localScale = settingWeaponSize;
         player.Gun.transform.position = player.BackGunSlot.transform.position;
         player.Gun.transform.rotation = player.BackGunSlot.transform.rotation;
         player._Input.aim = false;
         player._Input.cursorInputForLook = false;
-
+        UIManager.Instance.isCutScene = true;
     }
     public void MissionStart()
     {
@@ -79,9 +91,15 @@ public class CutSceneManager : SingleTon<CutSceneManager>
     {
         StartCoroutine(SpawnPlayerStartCo());
     }
-    public void CutSceneStart()
+    public void CutSceneStart(int index)
     {
-        playableDirector.Play(cutSceneTL[0]);
+        playableDirector.Play(cutSceneTL[index]);
+    }
+    public void CutSceneEnd()
+    {
+        UIManager.Instance.isCutScene = false;
+        SceneManager.LoadScene(GameManager.LoadingSceneIndex);
+        // 이것저것 많이 넣어야 겠지? 모르겠다 언제 끝나냐 일단 로드 씬부터 하자
     }
     IEnumerator SpawnWeaponStartCo()
     {
@@ -130,4 +148,5 @@ public class CutSceneManager : SingleTon<CutSceneManager>
             }
         }
     }
+
 }

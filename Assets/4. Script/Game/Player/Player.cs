@@ -2,55 +2,76 @@ using UnityEngine;
 using InterfaceManager;
 using StarterAssets;
 using System.Collections;
-using UnityEditor.Animations;
-
 public class Player : MonoBehaviour, IHitable
 {
     #region º¯¼ö
-
-    private IEnumerator                         wornOutCoroutine; 
+    public  GameObject[]                        hitClips;
+    public  Material                            playerMat;
+    public  Material                            WeaponMat;
     private ThirdPersonController               thirdPersonController;
     private StarterAssetsInputs                 input;
     private StateMachine<Player>                sm;
     private Animator                            anim;
+    private AudioManager                        amInstance;
+    private Coroutine                           recoveryCo;
+    private Coroutine                           resurrectyCo;
     private float                               hp;
-    private bool                                isRunning;
+    private float                               speed;
+    private float                               sprintSpeed;
+    private float                               weaponMatMinValue;
+    private float                               weaponMatMaxValue;
+    private float                               weaponMatGetValue;
+    private float                               playerMatMinValue;
+    private float                               playerMatMaxValue;
+    private float                               playerMatGetValue;
+    private float                               weaponMatSpeed;
+    private float                               playerMatSpeed;
+    private bool                                isHurt;
     #endregion
 
     #region ÇÁ·ÎÆÛÆ¼
+    public bool IsHurt
+    {
+        get => isHurt;
+        set => isHurt = value;
+    }
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
+    public float SprintSpeed
+    {
+        get => sprintSpeed;
+        set => sprintSpeed = value;
+    }
     public float Hp
     {
         get => hp;
         set
         {
             hp = value;
-            if (hp < 4 && isRunning)
+            if(hp >= 4)
             {
-                StartCoroutine(wornOutCoroutine);
-                isRunning = false;
+                sm.SetState("Idle");
+                if (recoveryCo != null)
+                {
+                    StopCoroutine(recoveryCo);
+                    recoveryCo = null;
+                }
             }
-            else if (hp == 4)
+            else if(hp >= 3 && hp < 4)
+                sm.SetState("Pain");
+            else if (hp >= 2 && hp < 3)
+                sm.SetState("Exhaustion");
+            else if (hp >= 1 && hp < 2)
+                sm.SetState("Dying");
+            else
             {
-                StopCoroutine(wornOutCoroutine);
-                isRunning = true;
-            }
-            switch (hp)
-            {
-                case 4:
-                    sm.SetState("Idle");
-                    break;
-                case 3:
-                    sm.SetState("Pain");
-                    break;
-                case 2:
-                    sm.SetState("Exhaustion");
-                    break;
-                case 1:
-                    sm.SetState("Dying");
-                    break;
-                case 0:
-                    Debug.Log("¾ê Á×À½");
-                    break;
+                if(resurrectyCo == null)
+                {
+                    resurrectyCo = StartCoroutine(ResurrectyCo());
+                }
             }
         }
     }
@@ -59,7 +80,7 @@ public class Player : MonoBehaviour, IHitable
         get => anim;
         set => anim = value;
     }
-    public StarterAssetsInputs Input
+    public StarterAssetsInputs _Input
     {
         get => input;
         set => input = value;
@@ -70,18 +91,26 @@ public class Player : MonoBehaviour, IHitable
         set => thirdPersonController = value;
     }
 
+    
+
     #endregion
     private void Start()
     {
         hp =                        4;
-        wornOutCoroutine =          WornOutCo();
         input =                     GetComponent<StarterAssetsInputs>();
         thirdPersonController =     GetComponent<ThirdPersonController>();
         anim =                      GetComponent<Animator>();
+        amInstance =                AudioManager.Instance;
         sm =                        new StateMachine<Player>();
         sm.owner =                  this;
-        isRunning =                 true;
-
+        weaponMatMinValue =         -0.15f;
+        weaponMatMaxValue =         0.8f;
+        playerMatMinValue =         0.1f;
+        playerMatMaxValue =         2.1f;
+        weaponMatGetValue =         weaponMatMaxValue;
+        playerMatGetValue =         playerMatMaxValue;
+        playerMatSpeed =            2f;
+        weaponMatSpeed =            0.95f;
 
         sm.AddState("Idle", new PlayerIdleState());
         sm.AddState("Pain", new PlayerPainState());
@@ -92,18 +121,60 @@ public class Player : MonoBehaviour, IHitable
     private void Update()
     {
         sm.curState?.Update();
+        if (Input.GetKeyDown(KeyCode.J)) Debug.Log(Hp);
     }
-    IEnumerator WornOutCo()
+    public void Hit(IAttackable attackObj)
     {
-        //float time = 0;
-        //while (Hp <= 3.9)
-        //{
-        //    time += Time.deltaTime;
-        //    Hp += time / 3f; // Ensure division is a float
-        //    Debug.Log($"Time: {time}, Hp: {Hp}"); // Debugging
-        yield return null;
-        //}
-        //Hp = 4;
-        //Debug.Log("Hp is greater than 4. Coroutine finished.");
+        Hp -= attackObj.Power;
+        int index = Random.Range(0, hitClips.Length);
+        amInstance.PlaySound(hitClips[index], transform.position, 6);
+        if (recoveryCo == null)
+        {
+            recoveryCo = StartCoroutine(RecoveryCo());
+        }
+    }
+    IEnumerator RecoveryCo()
+    {
+        while (Hp < 4)
+        {
+            Hp += 0.05f;
+            yield return new WaitForSeconds(0.15f);
+        }
+        Hp = 4;
+        if(recoveryCo != null)
+        {
+            StopCoroutine(recoveryCo);
+            recoveryCo = null;
+        }
+    }
+    IEnumerator ResurrectyCo()
+    {
+        UIManager.Instance.sacrifice += 1;
+        gameObject.layer = 10;
+        while (weaponMatGetValue > weaponMatMinValue && playerMatGetValue > playerMatMinValue)
+        {
+            Hp = 4;
+            weaponMatGetValue -= Time.deltaTime * weaponMatSpeed;
+            playerMatGetValue -= Time.deltaTime * playerMatSpeed;
+            playerMat.SetFloat("_Split_Value", playerMatGetValue);
+            WeaponMat.SetFloat("_Split_Value", weaponMatGetValue);
+            yield return null;
+        }
+        playerMat.SetFloat("_Split_Value", playerMatMinValue);
+        WeaponMat.SetFloat("_Split_Value", weaponMatMinValue);
+        while (weaponMatGetValue < weaponMatMaxValue && playerMatGetValue < playerMatMaxValue)
+        {
+            Hp = 4;
+            weaponMatGetValue += Time.deltaTime * weaponMatSpeed;
+            playerMatGetValue += Time.deltaTime * playerMatSpeed;
+            playerMat.SetFloat("_Split_Value", weaponMatGetValue);
+            WeaponMat.SetFloat("_Split_Value", playerMatGetValue);
+            yield return null;
+        }
+        playerMat.SetFloat("_Split_Value", playerMatMaxValue);
+        WeaponMat.SetFloat("_Split_Value", weaponMatMaxValue);
+        yield return new WaitForSeconds(3);
+        gameObject.layer = 7;
+        resurrectyCo = null;
     }
 }

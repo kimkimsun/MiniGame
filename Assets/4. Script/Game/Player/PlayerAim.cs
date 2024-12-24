@@ -48,6 +48,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
     private Color                 originColor;
     private Vector3               screenCenter;
     private LayerMask             playerLayer;
+    private LayerMask             invincibleLayer;
     private Ray                   ray;
     private RaycastHit            hit;
     private IEnumerator           shootingCo;
@@ -66,7 +67,11 @@ public class PlayerAim : MonoBehaviour, IAttackable
     private bool                  isFindInterractive;
     private string                hideType;
 
-
+    public GameObject ShootSound
+    {
+        get => shootSound; 
+        set => shootSound = value;
+    }
     public StarterAssetsInputs _Input
     {
         get => input;
@@ -82,7 +87,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
         get => backGunSlot;
         set => backGunSlot = value;
     }
-    public Transform HackGunSlot
+    public Transform HandGunSlot
     {
         get => handGunSlot;
         set => handGunSlot = value;
@@ -111,11 +116,12 @@ public class PlayerAim : MonoBehaviour, IAttackable
         fireRate =              0.1f;
         aimObjDistance =        20f;
         rotationSpeed =         120f;
-        currentBullet =         30;
+        currentBullet =         50;
         power =                 10;
         maxDistance =           6;
         playerLayer =           1 << 7;
-        layerMask =             ~playerLayer;
+        invincibleLayer =       1 << 10;
+        layerMask =             ~(playerLayer | invincibleLayer);
         characterController =   GetComponent<CharacterController>();
         input =                 GetComponent<StarterAssetsInputs>();
         controller =            GetComponent<ThirdPersonController>();
@@ -148,7 +154,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
             anim.SetLayerWeight(1,1);
             anim.SetTrigger("Reload");
             controller.isReload = true;
-            currentBullet = 30;
+            currentBullet = 50;
             BulletCountUpdate(currentBullet);
         }
 
@@ -230,7 +236,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
     {
         while(true)
         {
-            if (enemy != null) enemy.Hp -= power;
+            if (enemy != null) enemy.Hit(this);
             if (interactiveObj != null) interactiveObj.Interactive();
             amInstance.PlaySound(shootSound, this.transform.position, 6);
             currentBullet--;

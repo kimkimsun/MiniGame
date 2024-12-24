@@ -6,6 +6,22 @@
         "dependencies": [
           {
             "name": "NavMeshAgent",
+            "scenes": [
+              "Assets/2. Scenes/3. MainGame.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "NavMeshData",
+            "scenes": [
+              "Assets/2. Scenes/3. MainGame.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "NavMeshObstacle",
             "scenes": [],
             "dependencyType": 0,
             "icon": null
@@ -19,7 +35,10 @@
           {
             "name": "NavMeshSettings",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -30,15 +49,12 @@
         "name": "Animation",
         "dependencies": [
           {
-            "name": "Animation",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
             "name": "AnimationClip",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -46,7 +62,10 @@
           {
             "name": "Animator",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -54,7 +73,10 @@
           {
             "name": "AnimatorController",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -68,7 +90,9 @@
           {
             "name": "Avatar",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -105,7 +129,10 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -113,7 +140,10 @@
           {
             "name": "AudioClip",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -121,7 +151,10 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -133,9 +166,36 @@
             "icon": null
           },
           {
+            "name": "AudioMixer",
+            "scenes": [
+              "Assets/2. Scenes/0. MainMenu.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AudioMixerGroup",
+            "scenes": [
+              "Assets/2. Scenes/0. MainMenu.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AudioMixerSnapshot",
+            "scenes": [
+              "Assets/2. Scenes/0. MainMenu.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "AudioResource",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -143,7 +203,10 @@
           {
             "name": "AudioSource",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -180,7 +243,10 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -193,14 +259,17 @@
           },
           {
             "name": "ComputeShader",
-            "scenes": [],
+            "scenes": [
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/2. LoadingScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -220,7 +289,10 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -234,7 +306,10 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -266,7 +341,10 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -274,7 +352,8 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -288,7 +367,8 @@
           {
             "name": "LightProbes",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -296,7 +376,9 @@
           {
             "name": "LightingSettings",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -304,7 +386,10 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -318,7 +403,10 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -326,7 +414,9 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -334,7 +424,9 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -342,7 +434,10 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -350,7 +445,10 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -364,7 +462,10 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -372,7 +473,10 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -402,15 +506,12 @@
             "icon": null
           },
           {
-            "name": "RayTracingShader",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
             "name": "RectTransform",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -424,7 +525,10 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -456,7 +560,10 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -470,7 +577,9 @@
           {
             "name": "SkinnedMeshRenderer",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -490,7 +599,9 @@
           {
             "name": "Sprite",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -547,6 +658,14 @@
             "name": "TimeManager",
             "scenes": [],
             "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "TrailRenderer",
+            "scenes": [
+              "Assets/2. Scenes/3. MainGame.unity"
+            ],
+            "dependencyType": 0,
             "icon": null
           },
           {
@@ -700,12 +819,6 @@
             "icon": "package/com.unity.modules.unityanalyticscommon"
           },
           {
-            "name": "Required by VFX Module",
-            "scenes": [],
-            "dependencyType": 2,
-            "icon": "package/com.unity.modules.vfx"
-          },
-          {
             "name": "Required by VR Module",
             "scenes": [],
             "dependencyType": 2,
@@ -731,7 +844,8 @@
           {
             "name": "PlayableDirector",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -881,7 +995,9 @@
           {
             "name": "ParticleSystem",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -889,7 +1005,9 @@
           {
             "name": "ParticleSystemRenderer",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -902,7 +1020,9 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -910,7 +1030,9 @@
           {
             "name": "CapsuleCollider",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -918,7 +1040,9 @@
           {
             "name": "CharacterController",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -932,7 +1056,8 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -946,7 +1071,8 @@
           {
             "name": "Rigidbody",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -975,39 +1101,9 @@
         "name": "Physics2D",
         "dependencies": [
           {
-            "name": "BoxCollider2D",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "Collider2D",
-            "scenes": [],
-            "dependencyType": 1,
-            "icon": null
-          },
-          {
-            "name": "CompositeCollider2D",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
             "name": "Physics2DSettings",
             "scenes": [],
             "dependencyType": 1,
-            "icon": null
-          },
-          {
-            "name": "PolygonCollider2D",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "Rigidbody2D",
-            "scenes": [],
-            "dependencyType": 0,
             "icon": null
           }
         ]
@@ -1188,12 +1284,6 @@
             "icon": "package/com.unity.modules.unityanalyticscommon"
           },
           {
-            "name": "Required by VFX Module",
-            "scenes": [],
-            "dependencyType": 2,
-            "icon": "package/com.unity.modules.vfx"
-          },
-          {
             "name": "Required by VR Module",
             "scenes": [],
             "dependencyType": 2,
@@ -1281,7 +1371,8 @@
           {
             "name": "Font",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1330,7 +1421,10 @@
           {
             "name": "Canvas",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1344,7 +1438,10 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
-              "Assets/2. Scenes/GameSelect.unity"
+              "Assets/2. Scenes/0. MainMenu.unity",
+              "Assets/2. Scenes/1. LOBBY.unity",
+              "Assets/2. Scenes/2. LoadingScene.unity",
+              "Assets/2. Scenes/3. MainGame.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1382,35 +1479,6 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.vr"
-          }
-        ]
-      },
-      {
-        "name": "VFX",
-        "dependencies": [
-          {
-            "name": "VFXManager",
-            "scenes": [],
-            "dependencyType": 1,
-            "icon": null
-          },
-          {
-            "name": "VisualEffect",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "VisualEffectAsset",
-            "scenes": [],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
-            "name": "VisualEffectObject",
-            "scenes": [],
-            "dependencyType": 1,
-            "icon": null
           }
         ]
       },

@@ -6,6 +6,9 @@ public class GameManager : SingleTon<GameManager>
 {
     public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
     public Player player;
+    public static int SelectGameIndex = 1;
+    public static int LoadingSceneIndex = 2;
+    public static int MainGameIndex = 3;
     public void CreatePool(GameObject prefab, int count)
     {
         string key = prefab.name;
@@ -69,7 +72,7 @@ public class GameManager : SingleTon<GameManager>
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
     }
 }

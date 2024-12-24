@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 3096010148292113152}
   - component: {fileID: 6783917229755196512}
   m_Layer: 8
-  m_Name: Antenna_Geom
+  m_Name: Antenna_Geom/////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,7 +250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 6541385327991583548}
   - component: {fileID: 13741725667548865}
   m_Layer: 8
-  m_Name: Mech_Walker_Arm_R_Med_Geom
+  m_Name: Mat/////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 6759550175610501484}
   - component: {fileID: 1348196313706937556}
   m_Layer: 8
-  m_Name: Shotgun_Lvl5_Geom
+  m_Name: GunMat////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +459,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 7340138622474274456}
   - component: {fileID: 1175526156362915912}
   m_Layer: 8
-  m_Name: Mech_Walker_Arm_R_Med_Base_Geom
+  m_Name: MatMat///
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,7 +576,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 4165254997437795556}
   - component: {fileID: 8586065849975362265}
   m_Layer: 8
-  m_Name: Mech_Walker_Full_Hvy_Geom
+  m_Name: BottomMaterial///////////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +653,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 018091adc6358eb419c52f1aabb9dad5, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1004,7 +1004,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 962764359067631207}
-  - component: {fileID: 5362998258600998371}
   m_Layer: 8
   m_Name: Arm_R
   m_TagString: Untagged
@@ -1030,28 +1029,6 @@ Transform:
   - {fileID: 7383567374114983089}
   m_Father: {fileID: 7651479578070651603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5362998258600998371
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2634834326269000898}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: bc2731da6036cf84b9e78621d3ae48ad, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2643577674159256993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1173,7 @@ GameObject:
   - component: {fileID: 5798937675944846129}
   - component: {fileID: 17373856438393066}
   m_Layer: 8
-  m_Name: Cockpit_Rhino_Lid_Geom
+  m_Name: Mat///////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,7 +1225,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1282,7 +1259,7 @@ GameObject:
   - component: {fileID: 3792317534290333821}
   - component: {fileID: 1550099604435432867}
   m_Layer: 8
-  m_Name: Arm_Weapon_Hvy_Geom
+  m_Name: Mat////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,7 +1311,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1466,6 +1443,19 @@ MonoBehaviour:
   bulletHole: {fileID: 8902004485427294207}
   spineAnimator: {fileID: 7377444116679136988}
   weaponAnimator: {fileID: 6665599071353329241}
+  enemyMat: {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
+  enemyRenderer:
+  - {fileID: 8586065849975362265}
+  - {fileID: 17373856438393066}
+  - {fileID: 9072374334872796619}
+  - {fileID: 1076723000332578106}
+  - {fileID: 1175526156362915912}
+  - {fileID: 13741725667548865}
+  - {fileID: 1550099604435432867}
+  - {fileID: 1348196313706937556}
+  - {fileID: 2787555386403857049}
+  - {fileID: 2692471929523251495}
+  - {fileID: 6783917229755196512}
 --- !u!65 &2629057541086759159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1593,7 +1583,7 @@ GameObject:
   - component: {fileID: 6267858988433865128}
   - component: {fileID: 2692471929523251495}
   m_Layer: 8
-  m_Name: Shoulders_Rhino_Geom
+  m_Name: HeadShoulderMat//////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1645,7 +1635,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e1dda54fad679ce4d96e32f57c2cd8a5, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1869,7 +1859,7 @@ GameObject:
   - component: {fileID: 3056674201580843786}
   - component: {fileID: 9072374334872796619}
   m_Layer: 8
-  m_Name: Cockpit_Rhino_Body_Geom
+  m_Name: MatMat//////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,7 +1911,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2330,7 +2320,7 @@ GameObject:
   - component: {fileID: 636032927919645101}
   - component: {fileID: 2787555386403857049}
   m_Layer: 8
-  m_Name: Arm_Weapon_Base_Geom
+  m_Name: LEFTArmMat////
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2382,7 +2372,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2600,7 +2590,7 @@ GameObject:
   - component: {fileID: 6152365456449637902}
   - component: {fileID: 1076723000332578106}
   m_Layer: 8
-  m_Name: Backpack_Box_2_Geom
+  m_Name: MataMAt///
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2652,7 +2642,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef60d0cdfd0095b45a0aa0903f37b882, type: 2}
+  - {fileID: 2100000, guid: 1b9b0f3512dc89f4aa6d8273dd7659ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

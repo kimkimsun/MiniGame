@@ -2,14 +2,29 @@
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="ArrowUI" preserve="nothing"/>
 		<type fullname="AudioManager" preserve="nothing"/>
+		<type fullname="Bullet" preserve="nothing"/>
 		<type fullname="CutSceneManager" preserve="nothing"/>
+		<type fullname="Enemy" preserve="nothing"/>
 		<type fullname="GameManager" preserve="nothing"/>
+		<type fullname="IInteractiveObj" preserve="nothing"/>
+		<type fullname="LoadingScene" preserve="nothing"/>
 		<type fullname="Player" preserve="nothing"/>
 		<type fullname="PlayerAim" preserve="nothing"/>
+		<type fullname="RankingSettings" preserve="nothing"/>
+		<type fullname="SecondCutSceneManager" preserve="nothing"/>
+		<type fullname="SlimUI.ModernMenu.ExtraLinks" preserve="nothing"/>
+		<type fullname="SlimUI.ModernMenu.ThemedUIData" preserve="nothing"/>
+		<type fullname="SlimUI.ModernMenu.ThemedUIElement" preserve="nothing"/>
+		<type fullname="SlimUI.ModernMenu.UIMenuManager" preserve="nothing"/>
+		<type fullname="SlimUI.ModernMenu.UISettingsManager" preserve="nothing"/>
 		<type fullname="StarterAssets.StarterAssetsInputs" preserve="nothing"/>
 		<type fullname="StarterAssets.ThirdPersonController" preserve="nothing"/>
-		<type fullname="Turn_Move" preserve="nothing"/>
+		<type fullname="TrainingEnemy" preserve="nothing"/>
+		<type fullname="TriggerEnterCheck" preserve="nothing"/>
 		<type fullname="UIManager" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="Unity.AI.Navigation">
+		<type fullname="Unity.AI.Navigation.NavMeshSurface" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.Animation.Rigging">
 		<type fullname="UnityEngine.Animations.Rigging.MultiAimConstraint" preserve="nothing"/>
@@ -24,6 +39,7 @@
 		<type fullname="Unity.Cinemachine.CinemachineCamera" preserve="nothing"/>
 		<type fullname="Unity.Cinemachine.CinemachinePipeline" preserve="nothing"/>
 		<type fullname="Unity.Cinemachine.CinemachineShot" preserve="nothing"/>
+		<type fullname="Unity.Cinemachine.CinemachineThirdPersonFollow" preserve="nothing"/>
 		<type fullname="Unity.Cinemachine.CinemachineTrack" preserve="nothing"/>
 		<type fullname="Unity.Cinemachine.CinemachineVirtualCamera" preserve="nothing"/>
 		<type fullname="Unity.Cinemachine.NoiseSettings" preserve="nothing"/>
@@ -36,6 +52,23 @@
 		<type fullname="UnityEngine.InputSystem.PlayerInput" preserve="nothing"/>
 		<type fullname="UnityEngine.InputSystem.RemoteInputPlayerConnection" preserve="nothing"/>
 		<type fullname="UnityEngine.InputSystem.UI.InputSystemUIInputModule" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="Unity.Postprocessing.Runtime">
+		<type fullname="UnityEngine.Rendering.PostProcessing.AmbientOcclusion" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.AutoExposure" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.Bloom" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.ChromaticAberration" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.ColorGrading" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.DepthOfField" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.Grain" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.LensDistortion" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.MotionBlur" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessLayer" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessProfile" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessResources" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessVolume" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.Vignette" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Core.Runtime">
 		<type fullname="UnityEngine.Rendering.ProbeVolumesOptions" preserve="nothing"/>
@@ -71,6 +104,7 @@
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerVector3" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerVector4" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.UI.UIFoldout" preserve="nothing"/>
+		<type fullname="UnityEngine.Rendering.Volume" preserve="nothing"/>
 		<type fullname="UnityEngine.Rendering.VolumeProfile" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Universal.Runtime">
@@ -101,6 +135,7 @@
 		<type fullname="UnityEngine.Rendering.Universal.WhiteBalance" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.TextMeshPro">
+		<type fullname="TMPro.TextMeshPro" preserve="nothing"/>
 		<type fullname="TMPro.TextMeshProUGUI" preserve="nothing"/>
 		<type fullname="TMPro.TMP_ColorGradient" preserve="nothing"/>
 		<type fullname="TMPro.TMP_FontAsset" preserve="nothing"/>
@@ -113,6 +148,7 @@
 		<type fullname="UnityEngine.Timeline.ActivationTrack" preserve="nothing"/>
 		<type fullname="UnityEngine.Timeline.AnimationPlayableAsset" preserve="nothing"/>
 		<type fullname="UnityEngine.Timeline.AnimationTrack" preserve="nothing"/>
+		<type fullname="UnityEngine.Timeline.MarkerTrack" preserve="nothing"/>
 		<type fullname="UnityEngine.Timeline.SignalAsset" preserve="nothing"/>
 		<type fullname="UnityEngine.Timeline.SignalEmitter" preserve="nothing"/>
 		<type fullname="UnityEngine.Timeline.SignalReceiver" preserve="nothing"/>
@@ -130,8 +166,13 @@
 		<type fullname="UnityEditor.TagManager" preserve="nothing"/>
 		<type fullname="UnityEditor.TimeManager" preserve="nothing"/>
 		<type fullname="UnityEditor.VFXManager" preserve="nothing"/>
+		<type fullname="UnityEngine.AI.NavMeshAgent" preserve="nothing"/>
+		<type fullname="UnityEngine.AI.NavMeshData" preserve="nothing"/>
 		<type fullname="UnityEngine.AnimationClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Animator" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioMixer" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioMixerGroup" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioMixerSnapshot" preserve="nothing"/>
 		<type fullname="UnityEngine.Audio.AudioResource" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
@@ -179,21 +220,25 @@
 		<type fullname="UnityEngine.TextAsset" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture2D" preserve="nothing"/>
+		<type fullname="UnityEngine.TrailRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Transform" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
 		<type fullname="UnityEngine.EventSystems.EventTrigger" preserve="nothing"/>
+		<type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Button" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.CanvasScaler" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.ContentSizeFitter" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.GraphicRaycaster" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.GridLayoutGroup" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Image" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.LayoutElement" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Mask" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Scrollbar" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.ScrollRect" preserve="nothing"/>
+		<type fullname="UnityEngine.UI.Slider" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Text" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.Toggle" preserve="nothing"/>
 		<type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="nothing"/>

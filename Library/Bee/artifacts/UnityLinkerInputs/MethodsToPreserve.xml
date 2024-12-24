@@ -1,7 +1,40 @@
 <linker>
 	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
 		<type fullname="CutSceneManager">
+			<method name="CutSceneEnd"/>
 			<method name="MissionStart"/>
+			<method name="OriginEveryThing"/>
+			<method name="PlayerSpawnStart"/>
+			<method name="StartSetting"/>
+			<method name="WeaponSpawnStart"/>
+		</type>
+		<type fullname="SecondCutSceneManager">
+			<method name="CutSceneEnd"/>
+			<method name="CutSceneStart"/>
+			<method name="LoadWithSpawn"/>
+			<method name="OriginEveryThing"/>
+		</type>
+		<type fullname="SlimUI.ModernMenu.ExtraLinks">
+			<method name="FLYFF"/>
+			<method name="GALA"/>
+			<method name="LAPELZ"/>
+			<method name="TREEFUL"/>
+			<method name="UVERSE"/>
+			<method name="WINWALK"/>
+		</type>
+		<type fullname="SlimUI.ModernMenu.UIMenuManager">
+			<method name="ControlsPanel"/>
+			<method name="PlayHover"/>
+			<method name="PlayHover"/>
+			<method name="RankingMenu"/>
+			<method name="VideoPanel"/>
+		</type>
+		<type fullname="UIManager">
+			<method name="ClickOK"/>
+			<method name="ClickOption"/>
+			<method name="Exit"/>
+			<method name="GetBack"/>
+			<method name="GetBack"/>
 		</type>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Core.Runtime" ignoreIfMissing="1">

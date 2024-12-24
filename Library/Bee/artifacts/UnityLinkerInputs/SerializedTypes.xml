@@ -1,4 +1,9 @@
 <linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="SlimUI.ModernMenu.ThemedUIData/Custom1" preserve="nothing" serialized="true"/>
+		<type fullname="SlimUI.ModernMenu.ThemedUIData/Custom2" preserve="nothing" serialized="true"/>
+		<type fullname="SlimUI.ModernMenu.ThemedUIData/Custom3" preserve="nothing" serialized="true"/>
+	</assembly>
 	<assembly fullname="Unity.Animation.Rigging">
 		<type fullname="UnityEngine.Animations.Rigging.MultiAimConstraintData" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.Animations.Rigging.RigLayer" preserve="nothing" serialized="true"/>
@@ -12,6 +17,7 @@
 		<type fullname="Unity.Cinemachine.CinemachineBlenderSettings/CustomBlend" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineBrain/LensModeOverrideSettings" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineLegacyCameraEvents/OnCameraLiveEvent" preserve="nothing" serialized="true"/>
+		<type fullname="Unity.Cinemachine.CinemachineThirdPersonFollow/ObstacleSettings" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.CinemachineVirtualCamera/LegacyTransitionParams" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.LegacyLensSettings" preserve="nothing" serialized="true"/>
 		<type fullname="Unity.Cinemachine.LensSettings" preserve="nothing" serialized="true"/>
@@ -31,6 +37,30 @@
 		<type fullname="UnityEngine.InputSystem.PlayerInput/ControlsChangedEvent" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.InputSystem.PlayerInput/DeviceLostEvent" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.InputSystem.PlayerInput/DeviceRegainedEvent" preserve="nothing" serialized="true"/>
+	</assembly>
+	<assembly fullname="Unity.Postprocessing.Runtime">
+		<type fullname="UnityEngine.Rendering.PostProcessing.BoolParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.ColorParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.FastApproximateAntialiasing" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.FloatParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.Fog" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.GradingModeParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.HistogramMonitor" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.LightMeterMonitor" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessDebugLayer" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessDebugLayer/OverlaySettings" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessResources/ComputeShaders" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessResources/Shaders" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.PostProcessResources/SMAALuts" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.Spline" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.SplineParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.TemporalAntialiasing" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.TextureParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.TonemapperParameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.Vector4Parameter" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.VectorscopeMonitor" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.Rendering.PostProcessing.WaveformMonitor" preserve="nothing" serialized="true"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Core.Runtime">
 		<type fullname="UnityEngine.Rendering.APVLeakReductionModeParameter" preserve="nothing" serialized="true"/>
@@ -147,6 +177,7 @@
 		<type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.UI.Scrollbar/ScrollEvent" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true"/>
+		<type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true"/>
 		<type fullname="UnityEngine.UI.Toggle/ToggleEvent" preserve="nothing" serialized="true"/>
 	</assembly>

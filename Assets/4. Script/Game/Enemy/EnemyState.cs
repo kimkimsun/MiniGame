@@ -1,5 +1,4 @@
 using InterfaceManager;
-using System.Collections;
 using UnityEngine;
 
 public class EnemyState : State
@@ -21,19 +20,18 @@ public class EnemyWanderState : EnemyState // 배회 State
     public override void Enter()
     {
         nextPosIndex = Random.Range(0, owner.NextPos.Length);
-        Debug.Log("원더 침입");
+        owner.SoundTrans = null;
     }
 
     public override void Exit()
     {
         owner.Agent.ResetPath();
-        Debug.Log("원더 나옴");
     }
 
     public override void Update()
     {
         // 목적지까지의 거리가 충분히 멀면 목적지로 이동
-        if (Vector3.Distance(owner.transform.position, owner.NextPos[nextPosIndex].position) > 1.5f)
+        if (Vector3.Distance(owner.transform.position, owner.NextPos[nextPosIndex].position) > 3f)
         {
             owner.Agent.SetDestination(owner.NextPos[nextPosIndex].transform.position);
         }
@@ -48,9 +46,11 @@ public class EnemyWanderState : EnemyState // 배회 State
 
 public class EnemyChaseState : EnemyState // 추격 State
 {
+    float time;
     public override void Enter()
     {
-        Debug.Log("chase 들어옴");
+        time = 0;
+        owner.PlayerTrans = null;
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
         owner.Agent.speed = 5;
     }
@@ -59,16 +59,18 @@ public class EnemyChaseState : EnemyState // 추격 State
     {
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, false);
         owner.Agent.speed = 3.5f;
+        owner.SoundTrans = null;
     }
 
     public override void Update()
     {
+        time += Time.deltaTime;
         owner.Agent.SetDestination(owner.SoundTrans.transform.position);
-        if (Vector3.Distance(owner.transform.position, owner.SoundTrans.transform.position) > 1.5f)
+        if (Vector3.Distance(owner.transform.position, owner.SoundTrans.transform.position) > 3f)
         {
             owner.Agent.SetDestination(owner.SoundTrans.transform.position);
         }
-        else
+        else if (time > 5)
         {
             owner.SoundTrans = null;
             sm.SetState("Wander");
@@ -80,10 +82,10 @@ public class EnemyAttackState : EnemyState // 공격 State
 {
     public override void Enter()
     {
-        Debug.LogWarning("어택에 들어오는건가");
         owner.Agent.isStopped = true;
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, true);
         owner.SpineAnimator.SetBool(owner.IdleAnimId, true);
+        owner.SoundTrans = null;
         owner.Attack();
     }
 
@@ -118,13 +120,12 @@ public class EnemyAttackState : EnemyState // 공격 State
 }
 public class EnemyKeepAttackState : EnemyState // 공격 State
 {
-    //Player player = GameManager.Instance.player;
     public override void Enter()
     {
+        owner.SoundTrans = null;
         owner.IsKeep = false;
-        Debug.LogWarning("keepattack에 들어오는건가?");
         owner.Attack();
-        //owner.Agent.SetDestination(player.transform.position);
+        owner.Agent.SetDestination(owner.PlayerTrans.position);
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, true);
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, true);
         owner.Agent.speed = 5;
@@ -136,7 +137,6 @@ public class EnemyKeepAttackState : EnemyState // 공격 State
         owner.WeaponAnimator.SetBool(owner.WeaponAnimId, false);
         owner.SpineAnimator.SetBool(owner.SpineRunAnimId, false);
         owner.Agent.speed = 3.5f;
-
         if (owner.AttackCoroutine != null)
         {
             owner.StopCoroutine(owner.AttackCoroutine); // 실행 중인 코루틴 중단
@@ -149,7 +149,7 @@ public class EnemyKeepAttackState : EnemyState // 공격 State
         if (!owner.Agent.pathPending && // 에이전트가 새로운 경로를 계산 중이지 아니하고,
             owner.Agent.remainingDistance /* 위치까지 남은거리가 */<= owner.Agent.stoppingDistance/* 도착했다고 판단을하면 */)
         {
-            Exit();
+            sm.SetState("Wander");
         }
     }
 }

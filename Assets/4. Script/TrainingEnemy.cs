@@ -40,4 +40,9 @@ public class TrainingEnemy : MonoBehaviour,IHitable
         transform.GetChild(0).gameObject.SetActive(true);
         myCollider.enabled = true;
     }
+
+    public void Hit(IAttackable attackObj)
+    {
+        Hp -= attackObj.Power;
+    }
 }

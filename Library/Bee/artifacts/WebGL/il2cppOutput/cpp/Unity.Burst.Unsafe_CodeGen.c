@@ -7,16 +7,13 @@
 
 
 
-extern void NonVersionableAttribute__ctor_mBC3056ECFEE16B17F3779A50EBDCCD519078E862 (void);
-static Il2CppMethodPointer s_methodPointers[2] = 
+static Il2CppMethodPointer s_methodPointers[1] = 
 {
 	NULL,
-	NonVersionableAttribute__ctor_mBC3056ECFEE16B17F3779A50EBDCCD519078E862,
 };
-static const int32_t s_InvokerIndices[2] = 
+static const int32_t s_InvokerIndices[1] = 
 {
 	-1,
-	12886,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
@@ -31,7 +28,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Unity_Burst_Unsafe_CodeGenModule;
 const Il2CppCodeGenModule g_Unity_Burst_Unsafe_CodeGenModule = 
 {
 	"Unity.Burst.Unsafe.dll",
-	2,
+	1,
 	s_methodPointers,
 	0,
 	NULL,

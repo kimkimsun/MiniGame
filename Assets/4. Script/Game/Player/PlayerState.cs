@@ -1,9 +1,4 @@
 using InterfaceManager;
-using StarterAssets;
-using System.Collections;
-using Unity.Cinemachine;
-using UnityEngine;
-using UnityEngine.Windows;
 
 public class PlayerState : State
 {
@@ -26,7 +21,7 @@ public class PlayerIdleState : PlayerState
     {
         walkSpeed = 2.0f;
         sprintSpeed = 5.335f;
-        owner._ThirdPersonController.targetSpeed = owner.Input.sprint ? sprintSpeed : walkSpeed;
+        owner.IsHurt = false;
         // 함수로 묶어야겠지
         // 사운드 호출하고
     }
@@ -39,7 +34,9 @@ public class PlayerPainState : PlayerState
     {
         walkSpeed = 1.5f;
         sprintSpeed = 4.000f;
-        owner._ThirdPersonController.targetSpeed = owner.Input.sprint ? sprintSpeed : walkSpeed;
+        owner.IsHurt = true;
+        owner.Speed = walkSpeed;
+        owner.SprintSpeed = sprintSpeed;
     }
     public override void Exit() { }
     public override void Update() { }
@@ -50,7 +47,9 @@ public class PlayerExhaustionState : PlayerState
     {
         walkSpeed = 1.2f;
         sprintSpeed = 3.035f;
-        owner._ThirdPersonController.targetSpeed = owner.Input.sprint ? sprintSpeed : walkSpeed;
+        owner.IsHurt = true;
+        owner.Speed = walkSpeed;
+        owner.SprintSpeed = sprintSpeed;
     }
     public override void Exit() { }
     public override void Update() { }
@@ -60,7 +59,9 @@ public class PlayerDyingState : PlayerState
     public override void Enter() 
     {
         walkSpeed = 1.0f;
-        owner._ThirdPersonController.targetSpeed = walkSpeed;
+        owner.IsHurt = true;
+        owner.Speed = walkSpeed;
+        owner.SprintSpeed = walkSpeed;
     }
     public override void Exit() { }
     public override void Update() { }
