@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 #endif
 
 namespace StarterAssets
@@ -43,11 +42,6 @@ namespace StarterAssets
         public float firstTopClamp = 0;
         public float firstBottomClamp = 0;
         public float CameraAngleOverride = 0.0f;
-        public float mouseSensitivity = 1.0f;
-        public float mouseVerticalSensitivity = 1.0f;
-        public float mouseHorizontalSensitivity = 1.0f;
-        public float mouseAimVerticalSensitivity = 1.0f;
-        public float mouseAimHorizontalSensitivity = 1.0f;
         public bool LockCameraPosition = false;
         public bool isAimMove;
         public bool isReload;
@@ -214,16 +208,12 @@ namespace StarterAssets
             if (_input.aim)
             {
                 CinemachineCameraThirdTarget.transform.rotation =
-                   Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride) * mouseAimVerticalSensitivity * mouseSensitivity,
-                                    _cinemachineTargetYaw * mouseAimHorizontalSensitivity * mouseSensitivity, 0.0f);
-                playerSpine.rotation = Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride)/* * mouseAimVerticalSensitivity * mouseSensitivity*/,
-                                                          currentY + aimRotationYFix, currentZ);
+                   Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride),_cinemachineTargetYaw, 0.0f);
+                playerSpine.rotation = Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride),currentY + aimRotationYFix, currentZ);
             }
             else
             {
-                CinemachineCameraThirdTarget.transform.rotation =
-                   Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride) * mouseVerticalSensitivity * mouseSensitivity,
-                                    _cinemachineTargetYaw * mouseHorizontalSensitivity * mouseSensitivity, 0.0f);
+                CinemachineCameraThirdTarget.transform.rotation = Quaternion.Euler((_cinemachineTargetPitch + CameraAngleOverride),_cinemachineTargetYaw, 0.0f);
             }
         }
 

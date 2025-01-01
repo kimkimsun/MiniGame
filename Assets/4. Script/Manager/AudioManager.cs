@@ -1,15 +1,73 @@
+using SlimUI.ModernMenu;
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class AudioManager : SingleTon<AudioManager>
 {
     // 사운드 타입별로 AudioSource 풀을 저장하는 Dictionary
     public Dictionary<string, Queue<AudioSource>> audioSourcePools = new Dictionary<string, Queue<AudioSource>>();
     public ThirdPersonController player;
+    public Slider BGMmusicSlider;
+    public Slider SFXmusicSlider;
     public float volume = 10;
+
+    private AudioSource audioSource;
+    private bool isSceneChange;
     // 특정 사운드에 대한 풀 생성
+    private void Start()
+    {
+        isSceneChange = false;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        audioSource = Camera.main.GetComponent<AudioSource>();
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "1. LOBBY")
+        {
+            LobbySetting();
+            ChangeMusicSet();
+        }
+    }
+    private void LobbySetting()
+    {
+        foreach (Slider slider in Resources.FindObjectsOfTypeAll<Slider>())
+        {
+            if (slider.gameObject.name == "BGMsound")
+            {
+                BGMmusicSlider = slider;
+            }
+            if (slider.gameObject.name == "SFXSound")
+            {
+                SFXmusicSlider = slider;
+            }
+        }
+    }
+    private void ChangeMusicSet()
+    {
+        BGMmusicSlider.value = UISettingsManager.bgmVolume;
+        SFXmusicSlider.value = UISettingsManager.sfxVolume;
+        audioSource = Camera.main.GetComponent<AudioSource>();
+        isSceneChange = true;
+    }
+
+    private void Update()
+    {
+        if (isSceneChange)
+        {
+            SoundManage();
+        } 
+    }
+    private void SoundManage()
+    {
+        audioSource.volume = Mathf.Round(BGMmusicSlider.value * 100f) / 1000f;
+        volume = Mathf.Round(SFXmusicSlider.value * 100) / 1000f;
+    }
     public void CreateSoundPool(GameObject audioSourcePrefab, int poolSize)
     {
         string soundKey = audioSourcePrefab.name;

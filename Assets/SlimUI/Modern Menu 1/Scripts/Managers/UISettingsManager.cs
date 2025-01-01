@@ -11,45 +11,41 @@ namespace SlimUI.ModernMenu
     {
         public enum Platform { Desktop, Mobile };
         public Platform platform;
-        // sliders
-        public GameObject BGMmusicSlider;
-        public GameObject SFXmusicSlider;
-        public GameObject mouseSensitivitySlider;
-        public GameObject sensitivityVerticalSlider;
-        public GameObject sensitivityHorizontalSlider;
-        public GameObject sensitivityAimVerticalSlider;
-        public GameObject sensitivityAimHorizontalSlider;
 
+        public static float bgmVolume;
+        public static float sfxVolume;
+
+        public Slider BGMmusicSlider;
+        public Slider SFXmusicSlider;
 
         private AudioSource audioSource;
         private AudioManager amInstance;
-        private ThirdPersonController player;
 
         public void Start()
         {
-            amInstance = AudioManager.Instance;
-            player = amInstance.player;
-            audioSource = Camera.main.GetComponent<AudioSource>();
-            audioSource.volume = BGMmusicSlider.GetComponent<Slider>().value;
-            amInstance.volume = SFXmusicSlider.GetComponent<Slider>().value;
-            mouseSensitivitySlider.GetComponent<Slider>().value = 5f;
-            sensitivityVerticalSlider.GetComponent<Slider>().value = 5f;
-            sensitivityHorizontalSlider.GetComponent<Slider>().value = 5f;
-            sensitivityAimVerticalSlider.GetComponent<Slider>().value = 5f;
-            sensitivityAimHorizontalSlider.GetComponent<Slider>().value = 5f;
-            // check full screen
-
-            // check shadow distance/enabled
+            FirstSetting();
         }
         public void Update()
         {
-            audioSource.volume = Mathf.Round(BGMmusicSlider.GetComponent<Slider>().value * 100f) / 1000f;
-            amInstance.volume = Mathf.Round(SFXmusicSlider.GetComponent<Slider>().value * 100) / 1000f;
-            player.mouseSensitivity = Mathf.Round(mouseSensitivitySlider.GetComponent<Slider>().value) / 5;
-            player.mouseVerticalSensitivity = Mathf.Round(sensitivityVerticalSlider.GetComponent<Slider>().value) / 5;
-            player.mouseHorizontalSensitivity = Mathf.Round(sensitivityHorizontalSlider.GetComponent<Slider>().value) / 5;
-            player.mouseAimVerticalSensitivity = Mathf.Round(sensitivityAimVerticalSlider.GetComponent<Slider>().value) / 5;
-            player.mouseAimHorizontalSensitivity = Mathf.Round(sensitivityAimHorizontalSlider.GetComponent<Slider>().value) / 5;
+            OptionSetting();
+            VolumeSave();
+        }
+        private void FirstSetting()
+        {
+            amInstance = AudioManager.Instance;
+            audioSource = Camera.main.GetComponent<AudioSource>();
+            audioSource.volume = BGMmusicSlider.value;
+            amInstance.volume = SFXmusicSlider.value;
+        }
+        private void OptionSetting()
+        {
+            audioSource.volume = Mathf.Round(BGMmusicSlider.value * 100f) / 1000f;
+            amInstance.volume = Mathf.Round(SFXmusicSlider.value * 100) / 1000f;
+        }
+        private void VolumeSave()
+        {
+            bgmVolume = audioSource.volume;
+            sfxVolume = amInstance.volume;
         }
     }
 }

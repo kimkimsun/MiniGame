@@ -1,14 +1,28 @@
+using SlimUI.ModernMenu;
+using StarterAssets;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : SingleTon<GameManager>
 {
     public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
     public Player player;
+    public ThirdPersonController playerController;
+    public Slider mouseSensitivitySlider;
+    public Slider sensitivityVerticalSlider;
+    public Slider sensitivityHorizontalSlider;
+    public Slider sensitivityAimVerticalSlider;
+    public Slider sensitivityAimHorizontalSlider;
+
     public static int SelectGameIndex = 1;
     public static int LoadingSceneIndex = 2;
     public static int MainGameIndex = 3;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U)) SceneManager.LoadScene(3);
+    }
     public void CreatePool(GameObject prefab, int count)
     {
         string key = prefab.name;
@@ -66,13 +80,6 @@ public class GameManager : SingleTon<GameManager>
             poolDictionary[key] = new Queue<GameObject>();
             obj.gameObject.SetActive(false);
             poolDictionary[key].Enqueue(obj);
-        }
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            SceneManager.LoadScene(3);
         }
     }
 }

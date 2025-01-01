@@ -706,8 +706,8 @@ MonoBehaviour:
   m_text: "TIP : \uCD1D\uC744 \uC3E0 \uB54C \uC549\uC544\uC11C \uC3D8\uBA74 \n\uBC18\uB3D9\uC774
     \uC904\uC5B4\uB4ED\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2187ed6f6f0a9344b81e5a9ea5ade7fb, type: 2}
-  m_sharedMaterial: {fileID: -7079486677939906994, guid: 2187ed6f6f0a9344b81e5a9ea5ade7fb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7b50497bcf12464eac4965d0ec6e5d6, type: 2}
+  m_sharedMaterial: {fileID: 3083591991998144758, guid: c7b50497bcf12464eac4965d0ec6e5d6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -809,7 +809,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7079486677939906994, guid: 2187ed6f6f0a9344b81e5a9ea5ade7fb, type: 2}
+  - {fileID: 3083591991998144758, guid: c7b50497bcf12464eac4965d0ec6e5d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1015,8 +1015,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2187ed6f6f0a9344b81e5a9ea5ade7fb, type: 2}
-  m_sharedMaterial: {fileID: -7079486677939906994, guid: 2187ed6f6f0a9344b81e5a9ea5ade7fb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7b50497bcf12464eac4965d0ec6e5d6, type: 2}
+  m_sharedMaterial: {fileID: 3083591991998144758, guid: c7b50497bcf12464eac4965d0ec6e5d6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1118,7 +1118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7079486677939906994, guid: 2187ed6f6f0a9344b81e5a9ea5ade7fb, type: 2}
+  - {fileID: 3083591991998144758, guid: c7b50497bcf12464eac4965d0ec6e5d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

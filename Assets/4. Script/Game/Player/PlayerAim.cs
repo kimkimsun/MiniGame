@@ -179,6 +179,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
                 {
                     isFindHitable = true;
                     if (HitableObj != null) enemy = HitableObj;
+                    thirdPersonaimImage.color = findHitableColor;
                 }
                 else
                 {
@@ -195,9 +196,7 @@ public class PlayerAim : MonoBehaviour, IAttackable
                 {
                     isFindInterractive = false;
                     interactiveObj = null;
-                    thirdPersonaimImage.color = originColor;
                 }
-                if (isFindHitable || isFindInterractive) thirdPersonaimImage.color = findHitableColor;
             }
             else
             {

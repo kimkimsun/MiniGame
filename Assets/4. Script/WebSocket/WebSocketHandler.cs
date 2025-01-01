@@ -11,10 +11,10 @@ public class WebSocketHandler : MonoBehaviour
     private static extern void SendScore(string userName, int score);
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //SendScore(score);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    //SendScore(score);
+        //}
     }
 
 }

@@ -249,7 +249,6 @@ namespace SlimUI.ModernMenu
             exitMenu.SetActive(true);
             if (extrasMenu) extrasMenu.SetActive(false);
             if (rankingMenu) rankingMenu.SetActive(false);
-
             mainMenu.SetActive(false);
             DisablePlayCampaign();
         }
@@ -259,7 +258,6 @@ namespace SlimUI.ModernMenu
             playMenu.SetActive(false);
             if (extrasMenu) extrasMenu.SetActive(true);
             if (rankingMenu) rankingMenu.SetActive(false);
-
             exitMenu.SetActive(false);
         }
 

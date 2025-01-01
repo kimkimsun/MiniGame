@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Text;
 using TMPro;
@@ -31,7 +32,7 @@ public class CutSceneManager : SingleTon<CutSceneManager>
     private float               playerMatMaxValue;
     private float               weaponSpawnSpeed;
     private float               playerSpawnSpeed;
-    
+
 
     private void Start()
     {
@@ -52,7 +53,6 @@ public class CutSceneManager : SingleTon<CutSceneManager>
         playerMatMinValue =            0.1f;
         playerMatMaxValue =            2.1f;
         playerMatGetValue =            playerMatMaxValue;
-
         weaponSpawnMat.SetFloat("_Split_Value", weaponMatMaxValue);
         playerSpawnMat.SetFloat("_Split_Value", playerMatGetValue);
 
@@ -93,6 +93,8 @@ public class CutSceneManager : SingleTon<CutSceneManager>
     }
     public void CutSceneStart(int index)
     {
+        Debug.Log("¶ó¶ó¶ö");
+        playableDirector.playableAsset = cutSceneTL[index];
         playableDirector.Play(cutSceneTL[index]);
     }
     public void CutSceneEnd()
@@ -148,5 +150,4 @@ public class CutSceneManager : SingleTon<CutSceneManager>
             }
         }
     }
-
 }

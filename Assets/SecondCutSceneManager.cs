@@ -1,5 +1,8 @@
 using StarterAssets;
 using System.Collections;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
@@ -8,10 +11,10 @@ public class SecondCutSceneManager : SingleTon<SecondCutSceneManager>
 {
     public Material         weaponSpawnMat;
     public Material         playerSpawnMat;
-    public TimelineAsset[]  cutSceneTL;
-    public PlayerAim        player;
+    public TimelineAsset    cutSceneTL;
 
 
+    private PlayerAim           player;
     private PlayableDirector    playableDirector;
     private Vector3             originWeaponSize;
     private float               weaponMatGetValue;
@@ -34,27 +37,50 @@ public class SecondCutSceneManager : SingleTon<SecondCutSceneManager>
         loadPlayerSpawnSpeed = 1f;
         loadWeaponSpawnSpeed = 0.475f;
         originWeaponSize = new Vector3(1, 1, 1);
-
-
+        playableDirector = GetComponent<PlayableDirector>();
+        player =         GameManager.Instance.player.GetComponent<PlayerAim>();
         weaponSpawnMat.SetFloat("_Split_Value", weaponMatGetValue);
         playerSpawnMat.SetFloat("_Split_Value", playerMatGetValue);
+         
+        FindTrack();
+        playableDirector.Play();
     }
-    private void Update()
+    public void FindTrack()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        // 타임라인의 트랙 가져오기
+        var trackList = playableDirector.playableAsset as TimelineAsset;
+        if (trackList == null) return;
+
+        foreach (var track in trackList.GetOutputTracks())
         {
-            CutSceneStartIndex(0);
+            // Cinemachine Track 처리
+            if (track.name == "Cinemachine Track")
+            {
+                var cinemachineTrack = track as CinemachineTrack; // CinemachineTrack으로 캐스팅
+                if (cinemachineTrack != null)
+                {
+                    var cinemachineBrain = Camera.main?.GetComponent<CinemachineBrain>();
+                    if (cinemachineBrain != null)
+                    {
+                        playableDirector.SetGenericBinding(cinemachineTrack, cinemachineBrain);
+                    }
+                }
+            }
+            // Animation Track 처리
+            else if (track.name == "Animation Track")
+            {
+                var animationTrack = track as AnimationTrack; // AnimationTrack으로 캐스팅
+                if (animationTrack != null)
+                {
+                    var animationtrack = player.GetComponent<Animator>();
+                    playableDirector.SetGenericBinding(animationTrack, animationtrack);
+                    break;
+                }
+            }
         }
     }
-    public void CutSceneStartIndex(int index)
-    {
-        playableDirector.Play(cutSceneTL[index]);
-    }
-
     public void OriginEveryThing()
     {
-        playableDirector = GetComponent<PlayableDirector>();
-        player = GameObject.Find("Player").GetComponent<PlayerAim>();
         player.Gun.gameObject.SetActive(true);
         player.Gun.transform.parent = player.HandGunSlot;
         player.Gun.transform.localScale = originWeaponSize;

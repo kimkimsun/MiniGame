@@ -220,12 +220,6 @@ public class UIManager : SingleTon<UIManager>
     }
     private void Update()
     {
-        if(player == null && SecondCutSceneManager.Instance != null)
-        {
-            player = SecondCutSceneManager.Instance.player;
-            playerController = player.GetComponent<ThirdPersonController>();
-            isTab = true;
-        }
         if (isTab)
         {
             playTime += Time.deltaTime;

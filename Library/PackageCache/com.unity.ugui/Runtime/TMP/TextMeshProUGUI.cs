@@ -2001,7 +2001,7 @@ namespace TMPro
                             ? string.Format("The character with Unicode value \\U{0:X8} was not found in the [{1}] font asset or any potential fallbacks. It was replaced by Unicode character \\u{2:X4} in text object [{3}].", srcGlyph, m_fontAsset.name, character.unicode, this.name)
                             : string.Format("The character with Unicode value \\u{0:X4} was not found in the [{1}] font asset or any potential fallbacks. It was replaced by Unicode character \\u{2:X4} in text object [{3}].", srcGlyph, m_fontAsset.name, character.unicode, this.name);
 
-                        Debug.LogWarning(formattedWarning, this);
+                        //Debug.LogWarning(formattedWarning, this);
                     }
                 }
                 #endregion
